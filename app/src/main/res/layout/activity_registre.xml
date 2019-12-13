@@ -13,7 +13,7 @@
         android:layout_height="60dp"
         android:background="#7686E0"
         android:gravity="center"
-        android:text="REGISTRE"
+        android:text="@string/REGISTRE"
         android:textSize="30sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/edtUsuari"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -60,7 +60,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
-        android:id="@+id/ed_Contrasenya"
+        android:id="@+id/edtContra"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -73,7 +73,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/txt_Contrasenya2"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/edtUsuari" />
 
     <TextView
         android:id="@+id/txt_Contrasenya2"
@@ -91,7 +91,8 @@
         android:id="@+id/btn_Registre"
         android:layout_width="0dp"
         android:layout_height="73dp"
-        android:text="Registre"
+        android:onClick="registrarUsuari"
+        android:text="@string/registrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

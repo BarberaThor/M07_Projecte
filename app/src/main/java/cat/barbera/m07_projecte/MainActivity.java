@@ -8,8 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
         mUsuari = findViewById(R.id.edUsuari);
         mContrasenya = findViewById(R.id.edContrasenya);
 
+
+
+
+
     }
 
     @Override
@@ -36,13 +39,7 @@ public class MainActivity extends AppCompatActivity {
     {
         super.onResume();
 
-        SharedPreferences mPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
 
-        String u = mPreferences.getString("usuari", "");
-        String c = mPreferences.getString("contrasenya", "");
-
-        mUsuari.setText(u);
-        mContrasenya.setText(c);
     }
 
     @Override
@@ -50,22 +47,6 @@ public class MainActivity extends AppCompatActivity {
     {
         super.onPause();
 
-        SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
-        SharedPreferences.Editor myEdit = sharedPreferences.edit();
-        myEdit.putString("usuari", mUsuari.getText().toString());
-        myEdit.putString("age", mContrasenya.getText().toString());
-        myEdit.commit();
-
-
-    }
-
-
-    public void ferLogin(View view) {
-
-        Log.d(LOG_TAG, "Button clicked!");
-        Intent intent = new Intent(this, SecondActivity.class);
-
-        startActivityForResult(intent, TEXT_REQUEST);
     }
 
     public void ferRegistre(View view) {
@@ -74,5 +55,25 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, RegistreActivity.class);
 
         startActivityForResult(intent, TEXT_REQUEST);
+    }
+
+    public void ferLogin(View view) {
+
+        SharedPreferences mPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+
+        String usuarish = mPreferences.getString("usuari", "");
+        String contrash = mPreferences.getString("contrasenya", "");
+
+        String usuarilog = mUsuari.getText().toString();
+        String contralog = mContrasenya.getText().toString();
+
+
+        if (usuarilog.equalsIgnoreCase(usuarish) && contralog.equalsIgnoreCase(contrash)) {
+
+            Intent intent = new Intent(this, SecondActivity.class);
+
+            startActivityForResult(intent, TEXT_REQUEST);
+
+        }
     }
 }

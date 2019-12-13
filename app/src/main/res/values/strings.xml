@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">M07_Projecte</string>
+    <string name="inici_sessio">INICI SESSIÓ</string>
+    <string name="registrar">Registrar</string>
+    <string name="REGISTRE">REGISTRE</string>
+    <string name="entrar">Entrar</string>
+    <string name="registrarse">Registrar-se</string>
 </resources>
