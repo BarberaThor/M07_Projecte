@@ -28,10 +28,6 @@ public class MainActivity extends AppCompatActivity {
         mUsuari = findViewById(R.id.edUsuari);
         mContrasenya = findViewById(R.id.edContrasenya);
 
-
-
-
-
     }
 
     @Override
@@ -61,11 +57,11 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences mPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
 
-        String usuarish = mPreferences.getString("usuari", "");
-        String contrash = mPreferences.getString("contrasenya", "");
+        String usuarish = mPreferences.getString("Usuari", "");
+        String contrash = mPreferences.getString("Contrasenya", "");
 
-        String usuarilog = mUsuari.getText().toString();
-        String contralog = mContrasenya.getText().toString();
+        final String usuarilog = mUsuari.getText().toString();
+        final String contralog = mContrasenya.getText().toString();
 
 
         if (usuarilog.equalsIgnoreCase(usuarish) && contralog.equalsIgnoreCase(contrash)) {
@@ -74,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
 
             startActivityForResult(intent, TEXT_REQUEST);
 
+        } else {
+
+            Toast.makeText(this, "Les dades no són correctes", Toast.LENGTH_SHORT).show();
         }
     }
 }
