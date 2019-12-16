@@ -2,6 +2,7 @@ package cat.barbera.m07_projecte;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 
 public class RegistreActivity extends AppCompatActivity {
 
+    private static final int TEXT_REQUEST = 1;
     EditText medtUsuari;
     EditText medtContra;
 
@@ -33,6 +35,7 @@ public class RegistreActivity extends AppCompatActivity {
         System.out.println("hola");
 
         if(!a.equalsIgnoreCase("")|| !b.equalsIgnoreCase("")) {
+
             SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
             SharedPreferences.Editor myEdit = sharedPreferences.edit();
             myEdit.putString("Usuari", medtUsuari.getText().toString());
@@ -41,10 +44,14 @@ public class RegistreActivity extends AppCompatActivity {
 
             finishActivity(1);
 
+
+
         }else {
 
             Toast.makeText(this, "Els camps no poden restar en blanc", Toast.LENGTH_SHORT).show();
         }
+        Intent intent2 = new Intent(this, MainActivity.class);
+        startActivityForResult(intent2, TEXT_REQUEST);
     }
 }
 

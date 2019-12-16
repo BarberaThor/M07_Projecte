@@ -5,4 +5,10 @@
     <string name="REGISTRE">REGISTRE</string>
     <string name="entrar">Entrar</string>
     <string name="registrarse">Registrar-se</string>
+    <string name="menu">MENÚ</string>
+
+    <string name="title_placeholder">Titulo</string>
+    <string name="news_placeholder">Obras</string>
+    <string name="obras_info_placeholder">Informacion sobre la obra de teatro!</string>
+    <string name="subtitle_detail_text">Informacion sobre las obras y sus noticias actualizadas.</string>
 </resources>
