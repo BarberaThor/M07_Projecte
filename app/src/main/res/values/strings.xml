@@ -7,8 +7,8 @@
     <string name="registrarse">Registrar-se</string>
     <string name="menu">MENÚ</string>
 
-    <string name="title_placeholder">Titulo</string>
-    <string name="news_placeholder">Obras</string>
-    <string name="obras_info_placeholder">Informacion sobre la obra de teatro!</string>
-    <string name="subtitle_detail_text">Informacion sobre las obras y sus noticias actualizadas.</string>
+    <string name="title_placeholder">Classe</string>
+    <string name="news_placeholder">Assignatura</string>
+    <string name="obras_info_placeholder">Grup de clase per pasar apunts o fer consultes!</string>
+    <string name="subtitle_detail_text">Consultes i compartició de apunts, excercicis, lllibres, etc...</string>
 </resources>

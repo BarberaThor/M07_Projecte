@@ -44,5 +44,5 @@
             android:layout_below="@id/newsTitle"
             android:text="@string/obras_info_placeholder" />
     </RelativeLayout>
-    
+
 </androidx.cardview.widget.CardView>
