@@ -11,4 +11,27 @@
     <string name="news_placeholder">Assignatura</string>
     <string name="obras_info_placeholder">Grup de clase per pasar apunts o fer consultes!</string>
     <string name="subtitle_detail_text">Consultes i compartició de apunts, excercicis, lllibres, etc...</string>
+
+    <string-array name="titol_assignatura">
+        <item>Matematiques</item>
+        <item>Angles</item>
+        <item>Catala</item>
+        <item>Castella</item>
+    </string-array>
+
+    <string-array name="info_assignatura">
+        <item>Here is some Baseball news!</item>
+        <item>Here is some Badminton news!</item>
+        <item>Here is some Basketball news!</item>
+        <item>Here is some Bowling news!</item>
+
+    </string-array>
+
+    <string-array name="portades_assignatura">
+        <item>@drawable/matesportada</item>
+        <item>@drawable/castellano</item>
+        <item>@drawable/catalaportada</item>
+        <item>Castellà</item>
+    </string-array>
+
 </resources>
