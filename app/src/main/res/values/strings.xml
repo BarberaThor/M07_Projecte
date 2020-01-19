@@ -12,6 +12,19 @@
     <string name="obras_info_placeholder">Grup de clase per pasar apunts o fer consultes!</string>
     <string name="subtitle_detail_text">Consultes i compartició de apunts, excercicis, lllibres, etc...</string>
 
+    <string name="Public">Public</string>
+    <string name="Privat">Privat</string>
+    <string name="nav_header_desc" />
+    <string name="nav_header_title" />
+    <string name="nav_header_subtitle" />
+    <string name="menu_home" />
+    <string name="menu_gallery" />
+    <string name="menu_slideshow" />
+    <string name="menu_tools" />
+    <string name="menu_share" />
+    <string name="menu_send" />
+    <string name="action_settings" />
+
     <string-array name="titol_assignatura">
         <item>Matematiques</item>
         <item>Angles</item>
