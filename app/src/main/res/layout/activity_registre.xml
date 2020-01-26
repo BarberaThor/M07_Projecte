@@ -14,6 +14,7 @@
         android:background="#7686E0"
         android:gravity="center"
         android:text="@string/REGISTRE"
+        android:textAppearance="?attr/textAppearanceSubtitle2"
         android:textSize="30sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,12 +90,17 @@
 
     <Button
         android:id="@+id/btn_Registre"
+        style="@style/Widget.Shrine.Button"
         android:layout_width="0dp"
         android:layout_height="73dp"
         android:onClick="registrarUsuari"
         android:text="@string/registrar"
+        android:textColor="#1D296B"
+        android:textSize="28dp"
+        android:textAppearance="?attr/textAppearanceSubtitle2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Switch
@@ -156,5 +162,17 @@
         android:text="Professor"
         tools:layout_editor_absoluteX="72dp"
         tools:layout_editor_absoluteY="601dp" />
+
+    <Button
+        android:id="@+id/btnMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:onClick="canviarMode"
+        android:text="@string/night_mode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/txt_TitolRegistre" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

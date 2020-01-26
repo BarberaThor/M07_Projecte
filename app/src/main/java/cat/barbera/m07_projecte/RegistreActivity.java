@@ -1,6 +1,7 @@
 package cat.barbera.m07_projecte;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -22,6 +23,11 @@ public class RegistreActivity extends AppCompatActivity {
 
         medtUsuari = findViewById(R.id.edtUsuari);
         medtContra = findViewById(R.id.edtContra);
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES); //For night mode theme
+        //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES); //For day mode theme
+        setContentView(R.layout.activity_registre);
+
 
     }
 
@@ -53,6 +59,26 @@ public class RegistreActivity extends AppCompatActivity {
         Intent intent2 = new Intent(this, MainActivity.class);
         startActivityForResult(intent2, TEXT_REQUEST);
     }
+
+
+    public void canviarMode(View view) {
+
+        int nightMode = AppCompatDelegate.getDefaultNightMode();
+
+        if (nightMode == AppCompatDelegate.MODE_NIGHT_YES) {
+            AppCompatDelegate.setDefaultNightMode
+                    (AppCompatDelegate.MODE_NIGHT_NO);
+        } else {
+            AppCompatDelegate.setDefaultNightMode
+                    (AppCompatDelegate.MODE_NIGHT_YES);
+
+            }
+
+            recreate();
+        }
+
+
+
 }
 
 

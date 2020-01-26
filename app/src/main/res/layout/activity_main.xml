@@ -14,12 +14,14 @@
         android:drawableRight="@android:drawable/ic_menu_send"
         android:onClick="ferLogin"
         android:text="@string/entrar"
+        style="@style/Widget.Shrine.Button"
+        android:textSize="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edContrasenya"
-        app:layout_constraintVertical_bias="0.177" />
+        app:layout_constraintVertical_bias="0.421" />
 
     <Button
         android:id="@+id/btn_actividadRegistro"
@@ -28,6 +30,8 @@
         android:layout_marginTop="23dp"
         android:onClick="ferRegistre"
         android:text="@string/registrarse"
+        style="@style/Widget.Shrine.Button"
+        android:textSize="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.542"
@@ -39,7 +43,7 @@
         android:id="@+id/edUsuari"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="90dp"
+        android:layout_marginBottom="36dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/txt_Contrasenya1"
@@ -51,7 +55,7 @@
         android:id="@+id/edContrasenya"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="324dp"
+        android:layout_marginBottom="172dp"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -81,10 +85,10 @@
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/txt_Usuari1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.278" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txt_Usuari1"
@@ -96,5 +100,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.252"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="152dp"
+        android:layout_height="196dp"
+        android:layout_marginBottom="88dp"
+        app:layout_constraintBottom_toTopOf="@+id/edUsuari"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_TitolLogin"
+        app:layout_constraintVertical_bias="0.787"
+        app:srcCompat="@drawable/logom07" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
