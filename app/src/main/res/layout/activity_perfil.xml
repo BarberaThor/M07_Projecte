@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/img_pefil"
         app:layout_constraintVertical_bias="0.918" />
 
     <TextView
@@ -57,11 +57,11 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.093"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/img_pefil"
         app:layout_constraintTop_toBottomOf="@+id/txt_TitolLogin" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/img_pefil"
         android:layout_width="109dp"
         android:layout_height="108dp"
         android:layout_marginTop="24dp"
@@ -83,7 +83,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txt_TitolLogin" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/txt_contraSalida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -94,6 +94,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txt_usuarioSalida" />
 
     <RadioGroup
+        android:id="@+id/rdg_idiomes"
         android:layout_width="263dp"
         android:layout_height="27dp"
         android:layout_marginStart="8dp"
@@ -103,10 +104,11 @@
         android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.086"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toEndOf="@+id/img_pefil"
         app:layout_constraintTop_toBottomOf="@+id/txt_TitolLogin">
 
         <LinearLayout
+            android:id="@+id/LinLayout_rdb"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
