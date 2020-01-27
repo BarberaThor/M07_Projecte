@@ -1,9 +1,11 @@
 <resources>
     <string name="app_name">M07_Projecte</string>
     <string name="inici_sessio">INICI SESSIÓ</string>
+    <string name="perfil_usuario">PERFIL USUARIO</string>
     <string name="registrar">Registrar</string>
     <string name="REGISTRE">REGISTRE</string>
     <string name="entrar">Entrar</string>
+    <string name="guardar">Guardar</string>
     <string name="registrarse">Registrar-se</string>
     <string name="menu">MENÚ</string>
 
@@ -25,6 +27,10 @@
     <string name="menu_send" />
     <string name="action_settings" />
 
+    <string name="night_mode">Night Mode</string>
+
+    <string name="day_mode">Day Mode</string>
+
     <string-array name="titol_assignatura">
         <item>Matematiques</item>
         <item>Angles</item>
@@ -39,15 +45,11 @@
         <item>Here is some Bowling news!</item>
 
     </string-array>
-
     <string-array name="portades_assignatura">
         <item>@drawable/matesportada</item>
         <item>@drawable/castellano</item>
         <item>@drawable/catalaportada</item>
         <item>Castellà</item>
     </string-array>
-
-    <string name="night_mode">Night Mode</string>
-    <string name="day_mode">Day Mode</string>
 
 </resources>
