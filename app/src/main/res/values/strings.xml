@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">M07_Projecte</string>
     <string name="inici_sessio">INICI SESSIÓ</string>
-    <string name="perfil_usuario">PERFIL USUARIO</string>
+    <string name="perfil_usuario">PERFIL USUARI</string>
     <string name="registrar">Registrar</string>
     <string name="REGISTRE">REGISTRE</string>
     <string name="entrar">Entrar</string>
@@ -27,9 +27,9 @@
     <string name="menu_send" />
     <string name="action_settings" />
 
-    <string name="night_mode">Night Mode</string>
+    <string name="night_mode">Mode fosc</string>
 
-    <string name="day_mode">Day Mode</string>
+    <string name="day_mode">Mode clar</string>
 
     <string-array name="titol_assignatura">
         <item>Matematiques</item>

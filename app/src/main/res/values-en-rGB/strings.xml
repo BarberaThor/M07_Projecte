@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">M07_Projecte</string>
+    <string name="app_name">M07_Project</string>
+    <string name="Privat">Private</string>
+    <string name="Public">Public</string>
+    <string name="REGISTRE">REGISTER</string>
+    <string name="day_mode">Day Mode</string>
+    <string name="entrar">Login</string>
+    <string name="guardar">Save</string>
+    <string name="inici_sessio">LOG IN</string>
+    <string name="menu">MENU</string>
+    <string name="news_placeholder">Subject</string>
+    <string name="night_mode">Night Mode</string>
+    <string name="perfil_usuario">USER PROFILE</string>
+    <string name="title_placeholder">Class</string>
 </resources>
