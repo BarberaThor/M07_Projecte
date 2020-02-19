@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">M07_Projecte</string>
     <string name="inici_sessio">INICI SESSIÓ</string>
-    <string name="perfil_usuario">PERFIL USUARIO</string>
+    <string name="perfil_usuario">PERFIL USUARI</string>
     <string name="registrar">Registrar</string>
     <string name="REGISTRE">REGISTRE</string>
     <string name="entrar">Entrar</string>
@@ -11,25 +11,25 @@
 
     <string name="title_placeholder">Classe</string>
     <string name="news_placeholder">Assignatura</string>
-    <string name="obras_info_placeholder">Grup de clase per pasar apunts o fer consultes!</string>
-    <string name="subtitle_detail_text">Consultes i compartició de apunts, excercicis, lllibres, etc...</string>
+    <string name="obras_info_placeholder" translatable="false">Grup de clase per pasar apunts o fer consultes!</string>
+    <string name="subtitle_detail_text" translatable="false">Consultes i compartició de apunts, excercicis, lllibres, etc...</string>
 
     <string name="Public">Public</string>
     <string name="Privat">Privat</string>
-    <string name="nav_header_desc" />
-    <string name="nav_header_title" />
-    <string name="nav_header_subtitle" />
-    <string name="menu_home" />
-    <string name="menu_gallery" />
-    <string name="menu_slideshow" />
-    <string name="menu_tools" />
-    <string name="menu_share" />
-    <string name="menu_send" />
-    <string name="action_settings" />
+    <string name="nav_header_desc" translatable="false" />
+    <string name="nav_header_title" translatable="false" />
+    <string name="nav_header_subtitle" translatable="false" />
+    <string name="menu_home" translatable="false" />
+    <string name="menu_gallery" translatable="false" />
+    <string name="menu_slideshow" translatable="false" />
+    <string name="menu_tools" translatable="false" />
+    <string name="menu_share" translatable="false" />
+    <string name="menu_send" translatable="false" />
+    <string name="action_settings" translatable="false" />
 
-    <string name="night_mode">Night Mode</string>
+    <string name="night_mode">Mode fosc</string>
 
-    <string name="day_mode">Day Mode</string>
+    <string name="day_mode">Mode clar</string>
 
     <string-array name="titol_assignatura">
         <item>Matematiques</item>
