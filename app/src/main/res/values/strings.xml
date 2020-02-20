@@ -29,6 +29,7 @@
 
     <string name="Text_post" translatable="false">Text Post</string>
     <string name="title_post" translatable="false">Títol</string>
+    <string name="publicar_post" translatable="false">Publicar</string>
 
     <string name="night_mode">Mode fosc</string>
 
