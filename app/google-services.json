@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "497601255005",
+    "firebase_url": "https://m07projecte.firebaseio.com",
+    "project_id": "m07projecte",
+    "storage_bucket": "m07projecte.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:497601255005:android:216ce116707172547ddfb4",
+        "android_client_info": {
+          "package_name": "cat.barbera.m07_projecte"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "497601255005-0qui23hfvnjh5g6a8l8a99u3otd9d77k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cat.barbera.m07_projecte",
+            "certificate_hash": "b848ea319b36ce727ea2cbcf103660e889fb66b2"
+          }
+        },
+        {
+          "client_id": "497601255005-9oe30cbbprjjs9ff66q9lhgree02chfd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cat.barbera.m07_projecte",
+            "certificate_hash": "4cc66969950bd29673dbd22b0f4d63d5401991c7"
+          }
+        },
+        {
+          "client_id": "497601255005-ooke8aamkkui6s6ojj99ifsu38lltcor.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD49PYJ6eT5sC1mrPo1VR4w9s53WkXy3dc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "497601255005-ooke8aamkkui6s6ojj99ifsu38lltcor.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
