@@ -9,18 +9,19 @@
     <Button
         android:id="@+id/btnGuardarPerfil"
         style="@style/Widget.Shrine.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="169dp"
+        android:layout_height="50dp"
+        android:background="@drawable/btns_esquinas_redondeadas"
         android:drawableRight="@drawable/ic_save_black_24dp"
+        android:onClick="handle_Guardar"
         android:text="@string/guardar"
         android:textSize="28dp"
-        android:onClick="handle_Guardar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_pefil"
-        app:layout_constraintVertical_bias="0.918" />
+        app:layout_constraintVertical_bias="0.966" />
 
     <TextView
         android:id="@+id/txt_Contrasenya1"
@@ -36,9 +37,14 @@
 
     <TextView
         android:id="@+id/txt_TitolLogin"
-        android:layout_width="408dp"
-        android:layout_height="59dp"
-        android:background="#7686E0"
+        android:layout_width="394dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/tf_esquinas_redondeadas"
         android:gravity="center"
         android:text="@string/perfil_usuario"
         android:textSize="30sp"

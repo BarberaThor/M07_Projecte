@@ -4,33 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C6E0EC"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/btnLogin"
+        style="@style/Widget.Shrine.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/btns_esquinas_redondeadas"
         android:drawableRight="@android:drawable/ic_menu_send"
         android:onClick="ferLogin"
         android:text="@string/entrar"
-        style="@style/Widget.Shrine.Button"
         android:textSize="28dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edContrasenya"
-        app:layout_constraintVertical_bias="0.421" />
+        app:layout_constraintTop_toBottomOf="@+id/edContrasenya" />
 
     <Button
         android:id="@+id/btn_actividadRegistro"
+        style="@style/Widget.Shrine.Button"
         android:layout_width="0dp"
-        android:layout_height="70dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="23dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/btns_esquinas_redondeadas"
         android:onClick="ferRegistre"
         android:text="@string/registrarse"
-        style="@style/Widget.Shrine.Button"
         android:textSize="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,32 +69,27 @@
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/txt_Contrasenya1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Contrasenya;"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/edContrasenya"
-        app:layout_constraintHorizontal_bias="0.292"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
         android:id="@+id/txt_TitolLogin"
-        android:layout_width="408dp"
+        android:layout_width="0dp"
         android:layout_height="59dp"
-        android:background="#7686E0"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/btns_esquinas_redondeadas"
         android:gravity="center"
         android:text="@string/inici_sessio"
         android:textSize="30sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/txt_Usuari1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.018" />
 
     <TextView
         android:id="@+id/txt_Usuari1"
@@ -103,17 +103,15 @@
         app:layout_constraintHorizontal_bias="0.252"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="152dp"
-        android:layout_height="196dp"
-        android:layout_marginBottom="88dp"
-        app:layout_constraintBottom_toTopOf="@+id/edUsuari"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_TitolLogin"
-        app:layout_constraintVertical_bias="0.787"
-        app:srcCompat="@drawable/logom07" />
+    <TextView
+        android:id="@+id/txt_Contrasenya1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contrasenya;"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/edContrasenya"
+        app:layout_constraintHorizontal_bias="0.292"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
