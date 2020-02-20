@@ -36,9 +36,9 @@ public class RegistreActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES); //For night mode theme
+        //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES); //For night mode theme
         //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES); //For day mode theme
-        setContentView(R.layout.activity_registre);
+        //setContentView(R.layout.activity_registre);
     }
 
 
@@ -49,24 +49,27 @@ public class RegistreActivity extends AppCompatActivity {
 
     public void registrarUsuari(View view) {
 
-        String email, pass;
-        email = medtUsuari.getText().toString();
-        pass = medtContra.getText().toString();
+        String email = medtUsuari.getText().toString();
+        String password = medtContra.getText().toString();
+            mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(Task<AuthResult> task    ) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d("taag", "createUserWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
 
-        mAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(this,new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    FirebaseUser user = mAuth.getCurrentUser();
-                    updateUI(user);
-                }else{
-                    Log.e("taag", "Sign-in Failed: " + task.getException().getMessage());
-                    // Or if you don't use Log:
-                     System.out.println("Sign-in Failed: " + task.getException().getMessage());
-                    Toast.makeText(RegistreActivity.this,"Erorr Login",Toast.LENGTH_LONG).show();
-                }
-            }
-        });
+                            updateUI(user);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w("taag", "createUserWithEmail:failure", task.getException());
+                            Toast.makeText(getApplicationContext(), "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                            updateUI(null);
+                        }
+                    }
+                });
         /*
         if(!a.equalsIgnoreCase("")|| !b.equalsIgnoreCase("")) {
 
@@ -96,7 +99,7 @@ public class RegistreActivity extends AppCompatActivity {
 
     }
 
-
+/*
     public void canviarMode(View view) {
 
         int nightMode = AppCompatDelegate.getDefaultNightMode();
@@ -112,7 +115,7 @@ public class RegistreActivity extends AppCompatActivity {
 
             recreate();
         }
-
+*/
 
 
 }

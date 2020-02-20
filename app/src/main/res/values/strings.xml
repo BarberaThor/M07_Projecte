@@ -27,6 +27,9 @@
     <string name="menu_send" translatable="false" />
     <string name="action_settings" translatable="false" />
 
+    <string name="Text_post" translatable="false">Text Post</string>
+    <string name="title_post" translatable="false">Títol</string>
+
     <string name="night_mode">Mode fosc</string>
 
     <string name="day_mode">Mode clar</string>

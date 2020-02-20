@@ -1,10 +1,7 @@
 package cat.barbera.m07_projecte;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -43,12 +40,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
+
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
         
     }
 
     private void updateUI(FirebaseUser currentUser) {
+        Intent intent = new Intent(this, FormulariActivity.class);
+
+        startActivityForResult(intent, TEXT_REQUEST);
     }
 
     @Override
@@ -76,30 +77,30 @@ public class MainActivity extends AppCompatActivity {
 
     public void ferLogin(View view) {
 
-        String email, password;
-        email = mUsuari.getText().toString();
-        password = mContrasenya.getText().toString();
-
+        String email = mUsuari.getText().toString();
+        String password = mContrasenya.getText().toString();
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+                    public void onComplete(Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            Log.d(LOG_TAG, "signInWithEmail:success");
+                            Log.d("tag", "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
-                            Log.w(LOG_TAG, "signInWithEmail:failure", task.getException());
+                            Log.w("tag", "signInWithEmail:failure", task.getException());
                             Toast.makeText(MainActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-                            updateUI(null);
+                            //updateUI(null);
                         }
 
                         // ...
                     }
                 });
+
+
 
         /*
         SharedPreferences mPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
@@ -113,9 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (usuarilog.equalsIgnoreCase(usuarish) && contralog.equalsIgnoreCase(contrash)) {
 
-            Intent intent = new Intent(this, SecondActivity.class);
 
-            startActivityForResult(intent, TEXT_REQUEST);
 
         } else {
 

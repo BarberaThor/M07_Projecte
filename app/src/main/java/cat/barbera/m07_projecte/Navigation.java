@@ -53,9 +53,9 @@ public class Navigation extends AppCompatActivity {
     }
 
     private static NavController findNavController(Navigation navigation, int nav_host_fragment) {
-        
+
         NavController a = null;
-        
+
         return a;
     }
 
