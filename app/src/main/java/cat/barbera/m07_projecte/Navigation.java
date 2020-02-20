@@ -8,7 +8,6 @@ import com.google.android.material.snackbar.Snackbar;
 import android.view.View;
 
 import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
@@ -20,7 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
-/*
+
 public class Navigation extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
@@ -53,6 +52,13 @@ public class Navigation extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
+    private static NavController findNavController(Navigation navigation, int nav_host_fragment) {
+        
+        NavController a = null;
+        
+        return a;
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -67,4 +73,4 @@ public class Navigation extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-}*/
+}
