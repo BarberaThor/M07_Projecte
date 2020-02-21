@@ -7,11 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.res.TypedArray;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
+
+import cat.barbera.m07_projecte.ui.home.Assignatura;
+import cat.barbera.m07_projecte.ui.home.AssignaturaAdapter;
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -34,7 +35,7 @@ public class SecondActivity extends AppCompatActivity {
         mAssignaturaData = new ArrayList<>();
 
         // Initialize the adapter and set it to the RecyclerView.
-        mAdapter = new AssignaturaAdapter(this, mAssignaturaData);
+        //mAdapter = new AssignaturaAdapter(this, mAssignaturaData);
         mRecyclerView.setAdapter(mAdapter);
 
         // Get the data.

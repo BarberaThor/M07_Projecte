@@ -1,6 +1,8 @@
 package cat.barbera.m07_projecte;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
+    private Context context;
+
 
     private EditText mUsuari, mContrasenya;
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
@@ -29,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        context = this;
 
         mUsuari = findViewById(R.id.edUsuari);
         mContrasenya = findViewById(R.id.edContrasenya);
@@ -118,5 +124,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
          */
+
+        Intent intent = new Intent(context, NavigationMenu.class);
+
+        startActivityForResult(intent, TEXT_REQUEST);
     }
 }

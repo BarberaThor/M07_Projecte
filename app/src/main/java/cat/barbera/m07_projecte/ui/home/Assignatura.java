@@ -1,4 +1,4 @@
-package cat.barbera.m07_projecte;
+package cat.barbera.m07_projecte.ui.home;
 
 public class Assignatura {
 

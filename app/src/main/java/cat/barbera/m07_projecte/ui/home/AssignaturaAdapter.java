@@ -1,4 +1,4 @@
-package cat.barbera.m07_projecte;
+package cat.barbera.m07_projecte.ui.home;
 
 
 import android.content.Context;
@@ -14,6 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+
+import cat.barbera.m07_projecte.DetailActivity;
+import cat.barbera.m07_projecte.R;
 
 public class AssignaturaAdapter extends RecyclerView.Adapter<AssignaturaAdapter.ViewHolder>  {
 
