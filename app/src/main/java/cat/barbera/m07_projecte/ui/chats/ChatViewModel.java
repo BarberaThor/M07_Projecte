@@ -1,16 +1,16 @@
-package cat.barbera.m07_projecte.ui.gallery;
+package cat.barbera.m07_projecte.ui.chats;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class GalleryViewModel extends ViewModel {
+public class ChatViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public GalleryViewModel() {
+    public ChatViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+        mText.setValue("This is chats fragment");
     }
 
     public LiveData<String> getText() {

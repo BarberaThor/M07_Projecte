@@ -19,10 +19,10 @@
     <string name="nav_header_desc" translatable="false" />
     <string name="nav_header_title" translatable="false" />
     <string name="nav_header_subtitle" translatable="false" />
-    <string name="menu_home" translatable="false" />
-    <string name="menu_gallery" translatable="false" />
-    <string name="menu_slideshow" translatable="false" />
-    <string name="menu_tools" translatable="false" />
+    <string name="menu_home" translatable="false" > Home </string>
+    <string name="menu_profile" translatable="false" > Profile </string>
+    <string name="menu_chats" translatable="false" > Chats </string>
+    <string name="menu_tools" translatable="false" > Tools </string>
     <string name="menu_share" translatable="false" />
     <string name="menu_send" translatable="false" />
     <string name="action_settings" translatable="false" />
