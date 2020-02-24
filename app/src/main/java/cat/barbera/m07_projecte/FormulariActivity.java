@@ -3,13 +3,18 @@ package cat.barbera.m07_projecte;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class FormulariActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
@@ -51,7 +56,7 @@ public class FormulariActivity extends AppCompatActivity implements AdapterView.
 
     public void publicarPost(View view) {
 
-        database = FirebaseDatabase.getInstance();
+        /*database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
 
         String a, b;
@@ -65,7 +70,34 @@ public class FormulariActivity extends AppCompatActivity implements AdapterView.
         //myRef.child("Titol").setValue(a);
         //myRef.child("Contingut").setValue(b);
 
-        myRef.child("jan").setValue("hola");
+        myRef.child("jan").setValue("hola");*/
+
+        String post = "Post3";
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRefName = database.getReference("Posts/" + post);
+
+        myRefName.child("Assignatura").setValue("Mates");
+        myRefName.child("Autor").setValue("Xavi");
+        myRefName.child("Contingut").setValue("Apunts");
+        myRefName.child("Titol").setValue("ApuntsMates");
+
+        myRefName.addValueEventListener(new ValueEventListener() {
+            private static final String TAG = "S";
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                //int value = Integer.parseInt(dataSnapshot.getValue(String.class));
+                //myRefName.setValue(String.valueOf(value));
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
 
 
     }

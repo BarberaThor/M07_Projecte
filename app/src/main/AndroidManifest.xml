@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MessageActivity"></activity>
-        <activity android:name=".FormulariActivity" />
+        <activity android:name=".NavigationMenu" />
         <activity android:name=".PerfilActivity" />
         <activity android:name=".DetailActivity" />
         <activity android:name=".RegistreActivity" />
         <activity android:name=".SecondActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".NavigationMenu"
+        <activity android:name=".FormulariActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
