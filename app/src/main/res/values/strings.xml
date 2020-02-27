@@ -19,29 +19,45 @@
     <string name="nav_header_desc" translatable="false" />
     <string name="nav_header_title" translatable="false" />
     <string name="nav_header_subtitle" translatable="false" />
-    <string name="menu_home" translatable="false" > Home </string>
-    <string name="menu_profile" translatable="false" > Profile </string>
-    <string name="menu_chats" translatable="false" > Chats </string>
-    <string name="menu_tools" translatable="false" > Tools </string>
+    <string name="menu_home" translatable="false"> Home </string>
+    <string name="menu_profile" translatable="false"> Profile </string>
+    <string name="menu_chats" translatable="false"> Chats </string>
+    <string name="menu_tools" translatable="false"> Tools </string>
     <string name="menu_share" translatable="false" />
     <string name="menu_send" translatable="false" />
     <string name="action_settings" translatable="false" />
 
-    <string name="Text_post" translatable="false">Text Post</string>
-    <string name="title_post" translatable="false">Títol</string>
-    <string name="publicar_post" translatable="false">Publicar</string>
+    <string name="Text_post" translatable="false"> TEXT POST</string>
+    <string name="title_post" translatable="false">Títol;</string>
+    <string name="publicar_post" translatable="false">PUBLICAR</string>
 
     <string name="night_mode">Mode fosc</string>
 
     <string name="day_mode">Mode clar</string>
 
+    <string name="title_activity_settings">Configuració</string>
+
+    <string name="messages_header">Missatges</string>
+    <string name="sync_header">Sincronització</string>
+    <string name="signature_title" translatable="false">Your signature</string>
+
+    <!-- Preference Titles -->
+    <string name="reply_title" translatable="false">Default reply action</string>
+    <string name="sync_title" translatable="false">Sync email periodically</string>
+
+    <!-- Messages Preferences -->
+    <string name="attachment_title" translatable="false">Download incoming attachments</string>
+    <string name="attachment_summary_on" translatable="false">Automatically download attachments for incoming emails
+    </string>
+
+    <!-- Sync Preferences -->
+    <string name="attachment_summary_off" translatable="false">Only download attachments when manually requested</string>
     <string-array name="titol_assignatura">
         <item>Matematiques</item>
         <item>Angles</item>
         <item>Catala</item>
         <item>Castella</item>
     </string-array>
-
     <string-array name="info_assignatura">
         <item>Here is some Baseball news!</item>
         <item>Here is some Badminton news!</item>

@@ -15,4 +15,7 @@
     <string name="registrar">Registrarse</string>
     <string name="registrarse">Registrarse</string>
     <string name="title_placeholder">Clase</string>
+    <string name="title_activity_settings">Ajustes</string>
+    <string name="sync_header">Sincronizción</string>
+    <string name="messages_header">Mensajes</string>
 </resources>
