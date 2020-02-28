@@ -1,14 +1,15 @@
 package cat.barbera.m07_projecte;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 public class DetailActivity extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,5 +23,6 @@ public class DetailActivity extends AppCompatActivity {
 
         Glide.with(this).load(getIntent().getIntExtra("image_resource",0))
                 .into(assignaturaImage);
+
     }
 }

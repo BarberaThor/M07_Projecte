@@ -15,9 +15,9 @@
         <activity android:name=".DetailActivity" />
         <activity android:name=".RegistreActivity" />
         <activity android:name=".SecondActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".NavigationMenu" />
         <activity
-            android:name=".NavigationMenu"
+            android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

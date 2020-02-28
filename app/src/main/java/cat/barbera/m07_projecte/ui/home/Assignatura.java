@@ -4,13 +4,15 @@ public class Assignatura {
 
     private String title;
     private String info;
+    private String autor;
 
     private final int imageResource;
 
-    public Assignatura(String title, String info, int imageResource) {
+    public Assignatura(String title, String info, int imageResource, String autor) {
         this.title = title;
         this.info = info;
         this.imageResource = imageResource;
+        this.autor = autor;
     }
 
     String getTitle() {
@@ -24,5 +26,9 @@ public class Assignatura {
     public int getImageResource() {
 
         return imageResource;
+    }
+
+    String getAutor(){
+        return autor;
     }
 }

@@ -83,8 +83,7 @@ public class AssignaturaAdapter extends RecyclerView.Adapter<AssignaturaAdapter.
 
                 Intent detailIntent = new Intent(mContext, DetailActivity.class);
                 detailIntent.putExtra("title", currentAssignatura.getTitle());
-                detailIntent.putExtra("image_resource",
-                        currentAssignatura.getImageResource());
+                detailIntent.putExtra("image_resource", currentAssignatura.getImageResource());
                 mContext.startActivity(detailIntent);
             }
         }

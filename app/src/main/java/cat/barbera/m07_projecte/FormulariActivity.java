@@ -10,19 +10,24 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Objects;
+import java.util.Random;
+
 public class FormulariActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
     private EditText mTitol, mContingut;
+    private Spinner sp;
 
 
     FirebaseDatabase database;
-
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,15 +36,16 @@ public class FormulariActivity extends AppCompatActivity implements AdapterView.
         mTitol = findViewById(R.id.edtTitol);
         mContingut = findViewById(R.id.edtContingut);
 
-        Spinner sp = findViewById(R.id.sp);
+
+        sp = findViewById(R.id.sp);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.titol_assignatura, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp.setAdapter(adapter);
         sp.setOnItemSelectedListener(this);
 
 
-
-
+        Log.d("test123", "Value is: ");
+        System.out.println("abcd");
     }
 
 
@@ -56,49 +62,26 @@ public class FormulariActivity extends AppCompatActivity implements AdapterView.
 
     public void publicarPost(View view) {
 
-        /*database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
-
-        String a, b;
-
-
-        //database.push().getKey();
+        String a, b, c, d;
 
         a = mTitol.getText().toString();
         b = mContingut.getText().toString();
+        c = sp.getSelectedItem().toString();
+        d = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
+        //d = "hola";
+        int random = new Random().nextInt(100) + 20;
 
-        //myRef.child("Titol").setValue(a);
-        //myRef.child("Contingut").setValue(b);
+        String ax = String.valueOf(random);
+        String post = "post4";
 
-        myRef.child("jan").setValue("hola");*/
-
-        String post = "Post3";
-
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        database = FirebaseDatabase.getInstance();
         DatabaseReference myRefName = database.getReference("Posts/" + post);
 
-        myRefName.child("Assignatura").setValue("Mates");
-        myRefName.child("Autor").setValue("Xavi");
-        myRefName.child("Contingut").setValue("Apunts");
-        myRefName.child("Titol").setValue("ApuntsMates");
 
-        myRefName.addValueEventListener(new ValueEventListener() {
-            private static final String TAG = "S";
-
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-                //int value = Integer.parseInt(dataSnapshot.getValue(String.class));
-                //myRefName.setValue(String.valueOf(value));
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
-            }
-        });
-
+        myRefName.child("Titol").setValue(a);
+        myRefName.child("Contingut").setValue(b);
+        myRefName.child("Assignatura").setValue(c);
+        myRefName.child("Autor").setValue(d);
 
     }
 }
