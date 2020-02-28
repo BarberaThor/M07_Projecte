@@ -50,8 +50,8 @@
 
     <EditText
         android:id="@+id/edtContingut"
-        android:layout_width="332dp"
-        android:layout_height="419dp"
+        android:layout_width="0dp"
+        android:layout_height="434dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
@@ -63,7 +63,7 @@
 
     <Spinner
         android:id="@+id/sp"
-        android:layout_width="392dp"
+        android:layout_width="0dp"
         android:layout_height="22dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
@@ -75,7 +75,7 @@
 
     <Button
         android:id="@+id/btnPublicar"
-        android:layout_width="132dp"
+        android:layout_width="wrap_content"
         android:layout_height="59dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="5dp"

@@ -24,7 +24,7 @@ public class ToolsFragment extends PreferenceFragmentCompat {
         setPreferencesFromResource(R.xml.root_preferences, rootKey);
     }
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
+    /*public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         toolsViewModel =
                 ViewModelProviders.of(this).get(ToolsViewModel.class);
@@ -32,5 +32,7 @@ public class ToolsFragment extends PreferenceFragmentCompat {
         //final TextView textView = root.findViewById(R.id.text_tools);
 
         return root;
-    }
+    }*/
+
+
 }

@@ -99,8 +99,8 @@
 
     <RadioGroup
         android:id="@+id/rdg_idiomes"
-        android:layout_width="wrap_content"
-        android:layout_height="17dp"
+        android:layout_width="258dp"
+        android:layout_height="26dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -110,7 +110,7 @@
         <LinearLayout
             android:id="@+id/LinLayout_rdb"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <RadioButton
