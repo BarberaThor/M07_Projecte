@@ -1,29 +1,37 @@
-<PreferenceScreen xmlns:android="https://schemas.android.com/apk/res/android">
-    <CheckBoxPreference
-        android:key="checkbox"
-        android:summary="Tap to check if on or off"
-        android:title="Checkbox Preference" />
-    <!--<RingtonePreference
-        android:key="ringtone"
-        android:showDefault="true"
-        android:showSilent="true"
-        android:summary="Pick a ringtone you like"
-        android:title="Ringtone Preference" />-->
-    <EditTextPreference
-        android:dialogTitle="Enter a text"
-        android:key="text"
-        android:summary="Click to show a text entry dialog"
-        android:title="EditText Preference" />
-    <ListPreference
-        android:dialogTitle="Select duration"
-        android:entries="@array/settings_list_preference_titles"
-        android:entryValues="@array/settings_list_preference_values"
-        android:key="list"
-        android:summary="Click to show a list to choose from"
-        android:title="List Preference" />
-    <SwitchPreference
-        android:key="switch"
-        android:title="Switch Preference"
-        android:summary="Click to switch on or off"
-        android:defaultValue="true"/>
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="setting_title_title_category"
+        android:title="Opcions del Titol">
+
+        <CheckBoxPreference
+            android:id="@+id/setting_title_show_id"
+            android:key="setting_title_show"
+            android:title="Mostra el Titol Principal"
+            android:summary="Mostra el titol principal" />
+
+        <EditTextPreference
+            android:key="setting_title_text"
+            android:title="Modifica el Titol Principal"
+            android:summary="Modifica el titol principal"
+            android:dialogTitle="Modifica el titol"
+            android:dialogMessage="Modifical el titol siusplau..."/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="setting_title_font_category"
+        android:title="Opcions de fons">
+
+        <ListPreference
+            android:key="setting_title_font_color"
+            android:title="Color de Fons"
+            android:summary="Canvia el color de fons"
+            android:entries="@array/colors"
+            android:entryValues="@array/colors"
+            android:dialogTitle="Change font color" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

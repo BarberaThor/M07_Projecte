@@ -26,4 +26,12 @@
         <item>360</item>
         <item>-1</item>
     </string-array>
+
+    <string-array name="colors">
+
+        <item>White</item>
+        <item>Black</item>
+        <item>Primary</item>
+
+    </string-array>
 </resources>
