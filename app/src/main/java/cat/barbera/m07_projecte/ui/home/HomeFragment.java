@@ -42,6 +42,8 @@ public class HomeFragment extends Fragment {
     private List<String> infoList;
     private List<String> aList;
 
+    TypedArray assignaturaImageResources;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
@@ -105,10 +107,7 @@ public class HomeFragment extends Fragment {
         infoList = new LinkedList<String>();
         aList = new LinkedList<String>();
 
-        final TypedArray assignaturaImageResources = getResources().obtainTypedArray(R.array.portades_assignatura);
-
-
-
+        assignaturaImageResources = getResources().obtainTypedArray(R.array.portades_assignatura);
 
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference myRef = database.getReference("Posts");
@@ -132,8 +131,6 @@ public class HomeFragment extends Fragment {
                     mAssignaturaData.clear();
 
                     for(int i=0; i < titolList.size(); i++) {
-
-
                         System.out.println("Test home 3");
                         //mAssignaturaData.add(new Assignatura(titolList.get(i),infoList.get(i), 1, autorList.get(i)));
                         mAssignaturaData.add(new Assignatura(titolList.get(i),infoList.get(i), assignaturaImageResources.getResourceId(i,0), autorList.get(i)));

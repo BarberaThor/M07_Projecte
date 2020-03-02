@@ -1,3 +1,4 @@
+/*
 package cat.barbera.m07_projecte;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,11 +21,9 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import cat.barbera.m07_projecte.ui.home.Assignatura;
 import cat.barbera.m07_projecte.ui.home.AssignaturaAdapter;
-import cat.barbera.m07_projecte.ui.home.HomeFragment;
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -37,6 +36,7 @@ public class SecondActivity extends AppCompatActivity {
     private List<String> infoList;
     private List<String> aList;
 
+    TypedArray assignaturaImageResources;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,24 +76,22 @@ public class SecondActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onSwiped(RecyclerView.ViewHolder viewHolder,
-                                 int direction) {
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
                 mAssignaturaData.remove(viewHolder.getAdapterPosition());
                 mAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
             }
-
         });
         helper.attachToRecyclerView(mRecyclerView);
     }
 
     private void initializeData() {
 
-        titolList = new LinkedList<String>();
-        autorList = new LinkedList<String>();
-        infoList = new LinkedList<String>();
-        aList = new LinkedList<String>();
+        titolList = new LinkedList<>();
+        autorList = new LinkedList<>();
+        infoList = new LinkedList<>();
+        aList = new LinkedList<>();
 
-        final TypedArray assignaturaImageResources = getResources().obtainTypedArray(R.array.portades_assignatura);
+        assignaturaImageResources = getResources().obtainTypedArray(R.array.portades_assignatura);
 
         for(int i = 0; i<4; i++) {
 
@@ -121,9 +119,7 @@ public class SecondActivity extends AppCompatActivity {
                     for(int i=0;i<aList.size();i++) {
                         System.out.println("test second 3");
                         mAssignaturaData.add(new Assignatura(titolList.get(i),infoList.get(i), assignaturaImageResources.getResourceId(i,0), autorList.get(i)));
-
                     }
-
                 }
 
                 @Override
@@ -134,15 +130,9 @@ public class SecondActivity extends AppCompatActivity {
             });
         }
 
-
-
-
-
         // Get the resources from the XML file.
-        String[] assignaturaList = getResources()
-                .getStringArray(R.array.titol_assignatura);
-        String[] assignaturaInfo = getResources()
-                .getStringArray(R.array.info_assignatura);
+        //String[] assignaturaList = getResources().getStringArray(R.array.titol_assignatura);
+        //String[] assignaturaInfo = getResources().getStringArray(R.array.info_assignatura);
 
         //TypedArray assignaturaImageResources = getResources().obtainTypedArray(R.array.portades_assignatura);
 
@@ -166,9 +156,11 @@ public class SecondActivity extends AppCompatActivity {
 
         // Notify the adapter of the change.
         //mAdapter.notifyDataSetChanged();
-    }
+    //}
 
     //public void resetAssignatura(View view) {
     //    initializeData();
     //}
-}
+//}
+
+

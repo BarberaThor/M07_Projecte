@@ -19,29 +19,17 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
 import androidx.drawerlayout.widget.DrawerLayout;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import android.view.Menu;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import static cat.barbera.m07_projecte.MainActivity.TEXT_REQUEST;
 
 public class NavigationMenu extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-
-    FirebaseDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,8 +45,6 @@ public class NavigationMenu extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });*/
-
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each

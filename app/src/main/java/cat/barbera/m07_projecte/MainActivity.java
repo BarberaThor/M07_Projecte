@@ -50,9 +50,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateUI(FirebaseUser currentUser) {
-        Intent intent = new Intent(this, SecondActivity.class);
-
-        startActivityForResult(intent, TEXT_REQUEST);
+        //Intent intent = new Intent(this, SecondActivity.class);
+        //startActivityForResult(intent, TEXT_REQUEST);
     }
 
     @Override
