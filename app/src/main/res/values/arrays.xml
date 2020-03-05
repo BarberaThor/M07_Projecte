@@ -27,11 +27,11 @@
         <item>-1</item>
     </string-array>
 
-    <string-array name="colors">
+    <string-array name="lenguage">
 
-        <item>White</item>
-        <item>Black</item>
-        <item>Primary</item>
+        <item>Català</item>
+        <item>Castellà</item>
+        <item>Angles</item>
 
     </string-array>
 </resources>

@@ -23,9 +23,9 @@
         android:label="@string/menu_chats"
         tools:layout="@layout/fragment_chat" />
 
-    <fragment
+    <activity
         android:id="@+id/nav_tools"
-        android:name="cat.barbera.m07_projecte.ui.tools.ToolsFragment"
+        android:name="cat.barbera.m07_projecte.ui.tools.ToolsActivity"
         android:label="@string/menu_tools"
         tools:layout="@layout/fragment_tools" />
 

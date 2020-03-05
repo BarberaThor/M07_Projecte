@@ -2,35 +2,43 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
-        android:key="setting_title_title_category"
-        android:title="Opcions del Titol">
+        android:key="setting_title_accesibility_category"
+        android:title="Accesibilitat">
 
-        <CheckBoxPreference
-            android:id="@+id/setting_title_show_id"
-            android:key="setting_title_show"
-            android:title="Mostra el Titol Principal"
-            android:summary="Mostra el titol principal" />
-
-        <EditTextPreference
-            android:key="setting_title_text"
-            android:title="Modifica el Titol Principal"
-            android:summary="Modifica el titol principal"
-            android:dialogTitle="Modifica el titol"
-            android:dialogMessage="Modifical el titol siusplau..."/>
+        <SwitchPreference
+            android:id="@+id/setting_accesibility"
+            android:key="accesibility_switch"
+            android:defaultValue="flase"
+            android:title="Activar Accesibilitat"
+            android:icon="@drawable/ic_accessibility_black_24dp"/>
 
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="setting_title_font_category"
-        android:title="Opcions de fons">
+        android:key="setting_title_translation_category"
+        android:title="Opcions de traducció">
 
         <ListPreference
-            android:key="setting_title_font_color"
-            android:title="Color de Fons"
-            android:summary="Canvia el color de fons"
-            android:entries="@array/colors"
-            android:entryValues="@array/colors"
-            android:dialogTitle="Change font color" />
+            android:key="setting_title_translate_languages"
+            android:title="Idioma"
+            android:summary="Canvia el idioma a mostrar"
+            android:entries="@array/lenguage"
+            android:entryValues="@array/lenguage"
+            android:dialogTitle="Canvia l'idioma"
+            android:icon="@drawable/ic_translate_black_24dp"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="setting_title_nightmode"
+        android:title="Mode Nit">
+
+        <CheckBoxPreference
+            android:id="@+id/setting_nightmode"
+            android:key="setting_title_nightmode"
+            android:title="Mode Nit"
+            android:summary="Activa el Mode Nit"
+            android:icon="@drawable/ic_brightness_3_black_24dp"/>
 
     </PreferenceCategory>
 

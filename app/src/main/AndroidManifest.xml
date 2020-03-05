@@ -14,7 +14,7 @@
         <activity android:name=".PerfilActivity" />
         <activity android:name=".DetailActivity" />
         <activity android:name=".RegistreActivity" />
-        <activity android:name=".SecondActivity" />
+        <activity android:name=".ui.tools.ToolsActivity" />
         <activity android:name=".MainActivity" />
         <activity
             android:name=".NavigationMenu"
