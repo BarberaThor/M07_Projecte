@@ -54,7 +54,6 @@
     <string name="attachment_summary_off" translatable="false">Only download attachments when manually requested</string>
     <string-array name="titol_assignatura">
         <item>Matematiques</item>
-        <item>Angles</item>
         <item>Catala</item>
         <item>Castella</item>
     </string-array>
@@ -69,7 +68,6 @@
         <item>@drawable/matesportada</item>
         <item>@drawable/castellano</item>
         <item>@drawable/catalaportada</item>
-        <item>Castellà</item>
     </string-array>
 
 </resources>

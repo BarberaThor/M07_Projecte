@@ -41,15 +41,14 @@ public class HomeFragment extends Fragment {
     private List<String> autorList;
     private List<String> infoList;
     private List<String> aList;
+    private List<Integer> Num;
 
     TypedArray assignaturaImageResources;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
+        homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        //final TextView textView = root.findViewById(R.id.text_home);
 
         //RECYCLERVIEW WITH CARDVIEWS
 
@@ -102,10 +101,11 @@ public class HomeFragment extends Fragment {
 
         System.out.println("Test home");
 
-        titolList = new LinkedList<String>();
-        autorList = new LinkedList<String>();
-        infoList = new LinkedList<String>();
-        aList = new LinkedList<String>();
+        titolList = new LinkedList<>();
+        autorList = new LinkedList<>();
+        infoList = new LinkedList<>();
+        aList = new LinkedList<>();
+        Num = new LinkedList<>();
 
         assignaturaImageResources = getResources().obtainTypedArray(R.array.portades_assignatura);
 
@@ -121,21 +121,43 @@ public class HomeFragment extends Fragment {
                     System.out.println("Test home2");
                     for ( DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
 
+                        System.out.println("TEST: " + titolList.size());
+
                         HashMap map = (HashMap)dataSnapshot1.getValue();
                         titolList.add(map.get("Titol").toString());
                         autorList.add(map.get("Autor").toString());
                         infoList.add(map.get("Contingut").toString());
                         aList.add(map.get("Assignatura").toString());
+
+                        System.out.println("Correcte " + map.get("Assignatura").toString());
+
+
+                        if((map.get("Assignatura").toString()) == "Matematiques"){
+                            Num.add(1);
+                            System.out.println("Correcte si");
+                        }
+
+                        if((map.get("Assignatura").toString()) == "Catala"  ){
+                            Num.add(2);
+                        }
+
+                        if((map.get("Assignatura").toString()) == "Castella"  ){
+                            Num.add(3);
+                        }else Num.add(0);
+
                     }
 
                     mAssignaturaData.clear();
 
+
+
                     for(int i=0; i < titolList.size(); i++) {
-                        System.out.println("Test home 3");
-                        //mAssignaturaData.add(new Assignatura(titolList.get(i),infoList.get(i), 1, autorList.get(i)));
-                        mAssignaturaData.add(new Assignatura(titolList.get(i),infoList.get(i), assignaturaImageResources.getResourceId(i,0), autorList.get(i)));
+                        mAssignaturaData.add(new Assignatura(titolList.get(i),infoList.get(i), assignaturaImageResources.getResourceId(Num.get(i),0), autorList.get(i)));
                     }
+
+                    mAdapter.notifyDataSetChanged();
                 }
+
 
 
                 @Override
@@ -165,7 +187,7 @@ public class HomeFragment extends Fragment {
         //assignaturaImageResources.recycle();
 
         // Notify the adapter of the change.
-        mAdapter.notifyDataSetChanged();
+
     }
 
 }

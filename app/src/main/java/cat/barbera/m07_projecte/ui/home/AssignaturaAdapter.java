@@ -47,7 +47,9 @@ public class AssignaturaAdapter extends RecyclerView.Adapter<AssignaturaAdapter.
 
         @Override
         public int getItemCount() {
+            System.out.println("hola " + mAssignaturaData.size());
             return mAssignaturaData.size();
+
         }
 
 
