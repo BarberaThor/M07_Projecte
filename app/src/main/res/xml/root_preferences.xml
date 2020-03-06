@@ -35,7 +35,7 @@
 
         <CheckBoxPreference
             android:id="@+id/setting_nightmode"
-            android:key="setting_title_nightmode"
+            android:key="setting_nightmode"
             android:title="Mode Nit"
             android:summary="Activa el Mode Nit"
             android:icon="@drawable/ic_brightness_3_black_24dp"/>

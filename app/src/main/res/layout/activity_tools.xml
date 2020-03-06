@@ -22,7 +22,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="52dp"
             android:layout_marginLeft="52dp"
-            android:src="@drawable/logom07"/>
+            android:src="@drawable/playstore"/>
 
         <ImageButton
             android:id="@+id/btnIconoAtras"

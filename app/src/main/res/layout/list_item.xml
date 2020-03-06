@@ -1,61 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:cardview="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    cardview:cardCornerRadius="5sp">
+    android:layout_margin="8dp">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp">
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/fotoPerfilMissatge"
-                android:layout_width="24sp"
-                android:layout_height="24sp"
-                android:src="@mipmap/ic_launcher" />
-
-        </LinearLayout>
-
-        <LinearLayout
+        <ImageView
+            android:id="@+id/assignaturaImage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:adjustViewBounds="true" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/title"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_alignBottom="@id/assignaturaImage"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"
+            android:text="@string/title_placeholder" />
 
-                <TextView
-                    android:id="@+id/nombreMissatge"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Xavi"
-                    android:layout_weight="1"/>
-                <TextView
-                    android:id="@+id/hora"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="00:00"/>
+        <TextView
+            android:id="@+id/newsTitle"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_below="@id/assignaturaImage"
+            android:textColor="?android:textColorSecondary"
+            android:text="@string/news_placeholder" />
 
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/missatgeMissatge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hola benvingut al chat de CommonBoard"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
+        <TextView
+            android:id="@+id/subTitle"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_below="@id/newsTitle"
+            android:text="@string/obras_info_placeholder" />
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
