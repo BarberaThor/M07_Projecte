@@ -65,8 +65,8 @@ public class AssignaturaAdapter extends RecyclerView.Adapter<AssignaturaAdapter.
 
                 // Initialize the views.
                 mTitleText = itemView.findViewById(R.id.title);
-                mInfoText = itemView.findViewById(R.id.subTitle);
-                mAssignaturaImage = itemView.findViewById(R.id.assignaturaImage);
+                //mInfoText = itemView.findViewById(R.id.subTitle);
+                //mAssignaturaImage = itemView.findViewById(R.id.assignaturaImage);
 
                 // Set the OnClickListener to the entire view.
                 itemView.setOnClickListener(this);
