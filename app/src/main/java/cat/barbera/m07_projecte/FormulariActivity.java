@@ -67,8 +67,8 @@ public class FormulariActivity extends AppCompatActivity implements AdapterView.
         a = mTitol.getText().toString();
         b = mContingut.getText().toString();
         c = sp.getSelectedItem().toString();
-        d = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
-        //d = "hola";
+        //d = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
+        d = "hola";
         int random = new Random().nextInt(100) + 20;
 
         String ax = String.valueOf(random);

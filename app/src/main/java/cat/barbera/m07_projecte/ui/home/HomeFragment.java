@@ -108,7 +108,7 @@ public class HomeFragment extends Fragment {
         Num = new LinkedList<>();
 
         assignaturaImageResources = getResources().obtainTypedArray(R.array.portades_assignatura);
-
+            
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference myRef = database.getReference("Posts");
 
@@ -132,24 +132,30 @@ public class HomeFragment extends Fragment {
                         System.out.println("Correcte " + map.get("Assignatura").toString());
 
 
-                        if((map.get("Assignatura").toString()) == "Matematiques"){
+                        String mates = "Matematiques";
+                        String cat = "Catala";
+                        String caste = "Castella";
+
+                        if((map.get("Assignatura").toString()).equals(mates)){
+                            Num.add(0);
+
+                        } else if((map.get("Assignatura").toString()).equals(cat)){
                             Num.add(1);
                             System.out.println("Correcte si");
-                        }
-
-                        if((map.get("Assignatura").toString()) == "Catala"  ){
+                        } else if((map.get("Assignatura").toString()).equals(caste)){
                             Num.add(2);
-                        }
+                            System.out.println("Correcte si");
+                        }else Num.add(3);
 
-                        if((map.get("Assignatura").toString()) == "Castella"  ){
-                            Num.add(3);
-                        }else Num.add(0);
+
 
                     }
 
                     mAssignaturaData.clear();
 
-
+                    for(int z = 0; z < Num.size(); z++) {
+                        System.out.println("Correcte si " + Num.get(z));
+                    }
 
                     for(int i=0; i < titolList.size(); i++) {
                         mAssignaturaData.add(new Assignatura(titolList.get(i),infoList.get(i), assignaturaImageResources.getResourceId(Num.get(i),0), autorList.get(i)));
