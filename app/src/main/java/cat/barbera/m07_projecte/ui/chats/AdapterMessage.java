@@ -10,21 +10,23 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import cat.barbera.m07_projecte.R;
 
 public class AdapterMessage extends RecyclerView.Adapter<HolderMessage> {
 
-    private List<Missatge> llistaMissatges = new ArrayList<>();
+    private List<MissatgeRebut> llistaMissatges = new ArrayList<>();
     private Context c;
 
     public AdapterMessage( Context c) {
         this.c = c;
     }
 
-    public void addMissatge(Missatge mMissatge) {
+    public void addMissatge(MissatgeRebut mMissatge) {
         llistaMissatges.add(mMissatge);
         notifyItemInserted(llistaMissatges.size());
     }
@@ -40,7 +42,6 @@ public class AdapterMessage extends RecyclerView.Adapter<HolderMessage> {
     public void onBindViewHolder(@NonNull HolderMessage holder, int position) {
         holder.getNombre().setText(llistaMissatges.get(position).getNom());
         holder.getMensaje().setText(llistaMissatges.get(position).getMisstage());
-        holder.getHora().setText(llistaMissatges.get(position).getHora());
         if(llistaMissatges.get(position).getType_message().equals("2")) {
             holder.getImgMissatge().setVisibility(View.VISIBLE);
             holder.getMensaje().setVisibility(View.VISIBLE);
@@ -50,7 +51,16 @@ public class AdapterMessage extends RecyclerView.Adapter<HolderMessage> {
             holder.getMensaje().setVisibility(View.VISIBLE);
         }
 
+        if (llistaMissatges.get(position).getFotoPerfil().isEmpty()) {
+                holder.getFotoMensaje().setImageResource(R.mipmap.ic_launcher);
+        } else {
+            Glide.with(c).load(llistaMissatges.get(position).getFotoPerfil()).into(holder.getFotoMensaje());
+        }
 
+        Long codigoHora = llistaMissatges.get(position).getHora();
+        Date d = new Date(codigoHora);
+        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss a");
+        holder.getHora().setText(sdf.format(d));
 
     }
 

@@ -22,6 +22,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -30,6 +31,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ServerValue;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -59,6 +61,9 @@ public class ChatFragment extends AppCompatActivity {
     private StorageReference storageReference   ;
 
     private static final int PHOTO_SEND = 1;
+    private static final int PHOTO_PERFIL = 2;
+
+    private String fotoPerfilCadena;
 
     protected void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
@@ -72,6 +77,7 @@ public class ChatFragment extends AppCompatActivity {
          btnEnviar = (Button) findViewById(R.id.btn_enviar);
          fotoPerfilCV = (CircleImageView) findViewById(R.id.fotoPerfil);
          imgButton = (ImageButton) findViewById(R.id.img_button);
+         fotoPerfilCadena = "";
 
          database = FirebaseDatabase.getInstance();
          myRef = database.getReference("Chat"); //Sala de chat (nombre)
@@ -90,7 +96,7 @@ public class ChatFragment extends AppCompatActivity {
                 /*adapter.addMissatge(new Missatge(edMissatge.getText().toString(), nombre.getText().toString(), "00:00", "1", ""));
                 edMissatge.setText(" ");*/
 
-                myRef.push().setValue(new Missatge(edMissatge.getText().toString(), nombre.getText().toString(), "00:00", "1", ""));
+                myRef.push().setValue(new MissatgeEnviar(edMissatge.getText().toString(), nombre.getText().toString(), "1", fotoPerfilCadena, ServerValue.TIMESTAMP));
                 edMissatge.setText("");
              }
          });
@@ -105,6 +111,16 @@ public class ChatFragment extends AppCompatActivity {
             }
         });
 
+        fotoPerfilCV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_GET_CONTENT);
+                i.setType("image/jpeg");
+                i.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
+                startActivityForResult(Intent.createChooser(i, "Escull una imatge"), PHOTO_PERFIL);
+            }
+        });
+
          adapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
              @Override
              public void onItemRangeInserted(int positionStart, int itemCount) {
@@ -116,7 +132,7 @@ public class ChatFragment extends AppCompatActivity {
          myRef.addChildEventListener(new ChildEventListener() {
              @Override
              public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                 Missatge m = dataSnapshot.getValue(Missatge.class);
+                 MissatgeRebut m = dataSnapshot.getValue(MissatgeRebut.class);
                  adapter.addMissatge(m);
 
              }
@@ -161,8 +177,26 @@ public class ChatFragment extends AppCompatActivity {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     Uri u = taskSnapshot.getUploadSessionUri();
-                    Missatge m = new Missatge("Xavi te ha enviado una foto", u.toString(), nombre.getText().toString(), "00:00", "2", "");
+                    MissatgeEnviar m = new MissatgeEnviar("Xavi t'ha enviat una foto", u.toString(), nombre.getText().toString(), "2", fotoPerfilCadena, ServerValue.TIMESTAMP);
                     myRef.push().setValue(m);
+                }
+            });
+
+
+        } else if (requestCode == PHOTO_PERFIL && resultCode == RESULT_OK) {
+
+            Uri u = data.getData();
+
+            storageReference = storage.getReference("foto_perfil");
+            final StorageReference fotoReferencia = storageReference.child(u.getLastPathSegment());
+            fotoReferencia.putFile(u).addOnSuccessListener(this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    Uri u = taskSnapshot.getUploadSessionUri();
+                    fotoPerfilCadena = u.toString();
+                    MissatgeEnviar m = new MissatgeEnviar("Xavi ha actualitzat el seu perfil", u.toString(), nombre.getText().toString(), "2", fotoPerfilCadena, ServerValue.TIMESTAMP);
+                    myRef.push().setValue(m);
+                    Glide.with(ChatFragment.this).load(u.toString()).into(fotoPerfilCV);
                 }
             });
 
