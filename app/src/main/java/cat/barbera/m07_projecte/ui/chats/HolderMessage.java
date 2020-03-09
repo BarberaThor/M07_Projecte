@@ -1,6 +1,7 @@
 package cat.barbera.m07_projecte.ui.chats;
 
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ public class HolderMessage extends RecyclerView.ViewHolder {
     private TextView mensaje;
     private TextView hora;
     private CircleImageView fotoMensaje;
+    private ImageView imgMissatge;
 
     public HolderMessage(@NonNull View itemView) {
         super(itemView);
@@ -22,6 +24,7 @@ public class HolderMessage extends RecyclerView.ViewHolder {
         mensaje = (TextView) itemView.findViewById(R.id.missatgeMissatge);
         hora = (TextView) itemView.findViewById(R.id.hora);
         fotoMensaje = (CircleImageView) itemView.findViewById(R.id.fotoPerfilMissatge);
+        imgMissatge = (ImageView) itemView.findViewById(R.id.missatgeFoto);
     }
 
     public TextView getNombre() {
@@ -54,5 +57,13 @@ public class HolderMessage extends RecyclerView.ViewHolder {
 
     public void setFotoMensaje(CircleImageView fotoMensaje) {
         this.fotoMensaje = fotoMensaje;
+    }
+
+    public ImageView getImgMissatge() {
+        return imgMissatge;
+    }
+
+    public void setImgMissatge(ImageView imgMissatge) {
+        this.imgMissatge = imgMissatge;
     }
 }

@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +32,7 @@ public class AdapterMessage extends RecyclerView.Adapter<HolderMessage> {
     @NonNull
     @Override
     public HolderMessage onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(c).inflate(R.layout.list_item, parent, false);
+        View v = LayoutInflater.from(c).inflate(R.layout.card_message, parent, false);
         return new HolderMessage(v);
     }
 
@@ -39,6 +41,14 @@ public class AdapterMessage extends RecyclerView.Adapter<HolderMessage> {
         holder.getNombre().setText(llistaMissatges.get(position).getNom());
         holder.getMensaje().setText(llistaMissatges.get(position).getMisstage());
         holder.getHora().setText(llistaMissatges.get(position).getHora());
+        if(llistaMissatges.get(position).getType_message().equals("2")) {
+            holder.getImgMissatge().setVisibility(View.VISIBLE);
+            holder.getMensaje().setVisibility(View.VISIBLE);
+            Glide.with(c).load(llistaMissatges.get(position).getUrlFoto()).into(holder.getFotoMensaje());
+        } else if (llistaMissatges.get(position).getType_message().equals("1")) {
+            holder.getImgMissatge().setVisibility(View.GONE);
+            holder.getMensaje().setVisibility(View.VISIBLE);
+        }
 
 
 
@@ -46,6 +56,6 @@ public class AdapterMessage extends RecyclerView.Adapter<HolderMessage> {
 
     @Override
     public int getItemCount() {
-        return 0;
+        return llistaMissatges.size();
     }
 }

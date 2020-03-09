@@ -15,6 +15,7 @@
         <activity android:name=".DetailActivity" />
         <activity android:name=".RegistreActivity" />
         <activity android:name=".ui.tools.ToolsActivity" />
+        <activity android:name=".ui.chats.ChatFragment"/>
         <activity android:name=".NavigationMenu" />
         <activity
             android:name=".MainActivity"

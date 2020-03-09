@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -55,34 +56,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:text="Usuari;"
+        android:layout_marginTop="44dp"
+        android:text="Email;"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/img_pefil"
-        app:layout_constraintTop_toBottomOf="@+id/rdg_idiomes" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_TitolLogin" />
 
     <ImageView
         android:id="@+id/img_pefil"
         android:layout_width="109dp"
         android:layout_height="108dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rdg_idiomes"
+        app:layout_constraintTop_toBottomOf="@+id/txt_TitolLogin"
         app:srcCompat="@drawable/persona" />
 
     <TextView
         android:id="@+id/txt_usuarioSalida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="44dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.384"
+        app:layout_constraintHorizontal_bias="0.385"
         app:layout_constraintStart_toEndOf="@+id/txt_Usuari1"
-        app:layout_constraintTop_toBottomOf="@+id/rdg_idiomes" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_TitolLogin" />
 
     <TextView
         android:id="@+id/txt_contraSalida"
@@ -94,43 +95,5 @@
         app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toEndOf="@+id/txt_Contrasenya1"
         app:layout_constraintTop_toBottomOf="@+id/txt_usuarioSalida" />
-
-    <RadioGroup
-        android:id="@+id/rdg_idiomes"
-        android:layout_width="258dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_TitolLogin">
-
-        <LinearLayout
-            android:id="@+id/LinLayout_rdb"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/rdb_angles"
-                android:layout_width="88dp"
-                android:layout_height="match_parent"
-                android:text="Anglès" />
-
-            <RadioButton
-                android:id="@+id/rdb_catala"
-                android:layout_width="84dp"
-                android:layout_height="match_parent"
-                android:text="Català" />
-
-            <RadioButton
-                android:id="@+id/rdb_castella"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Castellà" />
-        </LinearLayout>
-
-    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

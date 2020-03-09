@@ -47,6 +47,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <ImageButton
+            android:id="@+id/img_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_menu_gallery"
+            android:layout_gravity="center"/>
+
         <EditText
             android:id="@+id/ed_missatge"
             android:layout_width="match_parent"

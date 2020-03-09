@@ -2,6 +2,7 @@ package cat.barbera.m07_projecte.ui.chats;
 
 public class Missatge {
     private String misstage;
+    private String urlFoto;
     private String nom;
     private String hora;
     private String type_message;
@@ -13,6 +14,15 @@ public class Missatge {
 
     public Missatge(String misstage, String nom, String hora, String type_message, String fotoPerfil) {
         this.misstage = misstage;
+        this.nom = nom;
+        this.hora = hora;
+        this.type_message = type_message;
+        this.fotoPerfil = fotoPerfil;
+    }
+
+    public Missatge(String misstage, String urlFoto, String nom, String hora, String type_message, String fotoPerfil) {
+        this.misstage = misstage;
+        this.urlFoto = urlFoto;
         this.nom = nom;
         this.hora = hora;
         this.type_message = type_message;
@@ -57,5 +67,13 @@ public class Missatge {
 
     public void setFotoPerfil(String fotoPerfil) {
         this.fotoPerfil = fotoPerfil;
+    }
+
+    public String getUrlFoto() {
+        return urlFoto;
+    }
+
+    public void setUrlFoto(String urlFoto) {
+        this.urlFoto = urlFoto;
     }
 }
