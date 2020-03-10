@@ -19,9 +19,9 @@
 
     <activity
         android:id="@+id/nav_chats"
-        android:name="cat.barbera.m07_projecte.ui.chats.ChatFragment"
+        android:name="cat.barbera.m07_projecte.ui.chats.LlistaChats"
         android:label="@string/menu_chats"
-        tools:layout="@layout/fragment_chat" />
+        tools:layout="@layout/activity_llista_chats" />
 
     <activity
         android:id="@+id/nav_tools"

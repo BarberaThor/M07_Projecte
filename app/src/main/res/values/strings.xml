@@ -23,8 +23,8 @@
     <string name="menu_profile" translatable="false"> Profile </string>
     <string name="menu_chats" translatable="false"> Chats </string>
     <string name="menu_tools" translatable="false"> Tools </string>
-    <string name="menu_share" translatable="false" > Share</string>
-    <string name="menu_send" translatable="false" > Send </string>
+    <string name="menu_share" translatable="false"> Share</string>
+    <string name="menu_send" translatable="false"> Send </string>
     <string name="action_settings" translatable="false" />
 
     <string name="Text_post" translatable="false"> TEXT POST</string>
