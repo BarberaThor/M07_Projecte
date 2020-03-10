@@ -61,4 +61,10 @@ public class LlistaChats extends AppCompatActivity {
 
         return arrayList;
     }
+
+    public void crearChat(View view) {
+        Intent intent = new Intent(getApplicationContext(),FormulariNouChat.class);
+        startActivity(intent);
+
+    }
 }

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.chats.LlistaChats"></activity>
+        <activity android:name=".ui.chats.FormulariNouChat"></activity>
+        <activity android:name=".ui.chats.LlistaChats" />
         <activity android:name=".MessageActivity" />
         <activity android:name=".FormulariActivity" />
         <activity android:name=".PerfilActivity" />
@@ -17,9 +18,9 @@
         <activity android:name=".RegistreActivity" />
         <activity android:name=".ui.tools.ToolsActivity" />
         <activity android:name=".ui.chats.ChatFragment" />
-        <activity android:name=".NavigationMenu" />
+        <activity android:name=".MainActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".NavigationMenu"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
