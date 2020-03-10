@@ -18,6 +18,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class RegistreActivity extends AppCompatActivity {
 
     private static final int TEXT_REQUEST = 1;
@@ -56,6 +59,7 @@ public class RegistreActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(Task<AuthResult> task    ) {
                         if (task.isSuccessful()) {
+                            
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("taag", "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();

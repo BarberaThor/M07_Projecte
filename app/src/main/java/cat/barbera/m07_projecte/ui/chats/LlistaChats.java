@@ -23,12 +23,21 @@ public class LlistaChats extends AppCompatActivity {
     public static final String IMAGEN = "imagen";
     public static final String VIDEO = "video";
 
+    private String contactoRecibido;
+    private String fechaRecibida;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_llista_chats);
+
+        Intent intent = getIntent();
+
+        contactoRecibido = getIntent().getStringExtra("contacto");
+        fechaRecibida = getIntent().getStringExtra("fecha");
+
         
         init();
 
@@ -39,6 +48,7 @@ public class LlistaChats extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getApplicationContext(),ChatFragment.class);
+                intent.putExtra("contactoAChatear", contactoRecibido);
                 startActivity(intent);
             }
         });
@@ -58,6 +68,9 @@ public class LlistaChats extends AppCompatActivity {
 
         arrayList.add(new ObjetoListView("Administrador" + getEmoji(0x1F601), "Xavi; " + getEmoji(0x1F64C),
                 "10/3/2020", TEXTO, false, 3, "", R.drawable.playstore));
+
+        arrayList.add(new ObjetoListView(contactoRecibido, "" ,
+                fechaRecibida, TEXTO, false, 0, "", R.drawable.playstore));
 
         return arrayList;
     }

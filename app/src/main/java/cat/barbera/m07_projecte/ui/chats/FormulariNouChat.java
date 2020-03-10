@@ -14,10 +14,7 @@ import cat.barbera.m07_projecte.R;
 
 public class FormulariNouChat extends AppCompatActivity {
 
-    public static final String TEXTO = "texto";
-    public static final String AUDIO = "audio";
-    public static final String IMAGEN = "imagen";
-    public static final String VIDEO = "video";
+    public static final String EXTRA_MESSAGE_PARTICIPANTES = "cat.copernic.luna.dianaranking.extra.NOU_CHAT";
 
     private EditText ed_contacte;
     private EditText ed_fecha;
@@ -25,6 +22,8 @@ public class FormulariNouChat extends AppCompatActivity {
 
     private String contacte;
     private String fecha;
+
+
 
 
     @Override
@@ -41,13 +40,9 @@ public class FormulariNouChat extends AppCompatActivity {
                 contacte = ed_contacte.getText().toString();
                 fecha = ed_fecha.getText().toString();
 
-
-                ArrayList<ObjetoListView> arrayListNewChat = new ArrayList<>();
-
-                arrayListNewChat.add(new ObjetoListView(contacte, "",
-                        fecha, "", false, 0, "", R.drawable.playstore));
-
                 Intent intent = new Intent(getApplicationContext(),LlistaChats.class);
+                intent.putExtra("contacto", contacte);
+                intent.putExtra("fecha", fecha);
                 startActivity(intent);
             }
         });

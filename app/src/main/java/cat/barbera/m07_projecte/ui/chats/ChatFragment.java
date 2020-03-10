@@ -65,10 +65,14 @@ public class ChatFragment extends AppCompatActivity {
 
     private String fotoPerfilCadena;
 
+    private String contactoAChatear;
+
     protected void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
 
          setContentView(R.layout.fragment_chat);
+
+        contactoAChatear = getIntent().getStringExtra("contactoAChatear");
 
          context = this;
          nombre = (TextView) findViewById(R.id.nombre);
@@ -80,7 +84,7 @@ public class ChatFragment extends AppCompatActivity {
          fotoPerfilCadena = "";
 
          database = FirebaseDatabase.getInstance();
-         myRef = database.getReference("Chat"); //Sala de chat (nombre)
+         myRef = database.getReference("Chat" + contactoAChatear); //Sala de chat (nombre)
 
          storage = FirebaseStorage.getInstance();
 
