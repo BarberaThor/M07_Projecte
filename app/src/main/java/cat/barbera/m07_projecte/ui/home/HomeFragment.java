@@ -140,14 +140,12 @@ public class HomeFragment extends Fragment {
                             Num.add(0);
 
                         } else if((map.get("Assignatura").toString()).equals(cat)){
-                            Num.add(1);
-                            System.out.println("Correcte si");
-                        } else if((map.get("Assignatura").toString()).equals(caste)){
                             Num.add(2);
                             System.out.println("Correcte si");
+                        } else if((map.get("Assignatura").toString()).equals(caste)){
+                            Num.add(1);
+                            System.out.println("Correcte si");
                         }else Num.add(3);
-
-
 
                     }
 
@@ -163,8 +161,6 @@ public class HomeFragment extends Fragment {
 
                     mAdapter.notifyDataSetChanged();
                 }
-
-
 
                 @Override
                 public void onCancelled(DatabaseError error) {
@@ -195,5 +191,4 @@ public class HomeFragment extends Fragment {
         // Notify the adapter of the change.
 
     }
-
 }

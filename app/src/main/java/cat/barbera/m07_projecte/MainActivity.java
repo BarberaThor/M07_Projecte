@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
     public static final int TEXT_REQUEST = 1;
 
-
+    public static String varus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +50,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateUI(FirebaseUser currentUser) {
-        //Intent intent = new Intent(this, SecondActivity.class);
-        //startActivityForResult(intent, TEXT_REQUEST);
+
+        varus = currentUser.getUid();
+        Intent intent = new Intent(context, NavigationMenu.class);
+        startActivityForResult(intent, TEXT_REQUEST);
+
     }
 
     @Override
@@ -80,27 +83,32 @@ public class MainActivity extends AppCompatActivity {
 
         String email = mUsuari.getText().toString();
         String password = mContrasenya.getText().toString();
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d("tag", "signInWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w("tag", "signInWithEmail:failure", task.getException());
-                            Toast.makeText(MainActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            //updateUI(null);
+
+        if(email.equals("")||(password.equals(""))) {
+            Toast.makeText(MainActivity.this, "Comprovi els camps en blanc", Toast.LENGTH_SHORT).show();
+        } else {
+            mAuth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Log.d("tag", "signInWithEmail:success");
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                updateUI(user);
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Log.w("tag", "signInWithEmail:failure", task.getException());
+                                Toast.makeText(MainActivity.this, "Error d'autentificació",
+                                        Toast.LENGTH_SHORT).show();
+                                //updateUI(null);
+                            }
+
+                            // ...
                         }
+                    });
 
-                        // ...
-                    }
-                });
-
+        }
 
 
         /*
@@ -124,8 +132,5 @@ public class MainActivity extends AppCompatActivity {
 
          */
 
-        Intent intent = new Intent(context, NavigationMenu.class);
-
-        startActivityForResult(intent, TEXT_REQUEST);
     }
 }
