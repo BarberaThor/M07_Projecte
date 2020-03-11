@@ -69,6 +69,7 @@ public class FormulariActivity extends AppCompatActivity implements AdapterView.
         b = mContingut.getText().toString();
         c = sp.getSelectedItem().toString();
         d = varus;
+
         int random = new Random().nextInt(100) + 20;
 
         String ax = String.valueOf(random);
