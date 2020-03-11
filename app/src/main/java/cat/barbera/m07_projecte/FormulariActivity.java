@@ -1,5 +1,6 @@
 package cat.barbera.m07_projecte;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -25,8 +26,15 @@ public class FormulariActivity extends AppCompatActivity implements AdapterView.
     private EditText mTitol, mContingut;
     private Spinner sp;
 
-    FirebaseDatabase database;
+    private FirebaseDatabase database;
     private FirebaseAuth mAuth;
+
+    private  long contador;
+    private String post;
+
+    private DatabaseReference ref2;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,11 +42,11 @@ public class FormulariActivity extends AppCompatActivity implements AdapterView.
 
         mTitol = findViewById(R.id.edtTitol);
         mContingut = findViewById(R.id.edtContingut);
-
-        System.out.println("usuari2");
-        System.out.println("usuari2 : " + varus);
-
         sp = findViewById(R.id.sp);
+
+        database = FirebaseDatabase.getInstance();
+
+
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.titol_assignatura, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp.setAdapter(adapter);
@@ -60,27 +68,37 @@ public class FormulariActivity extends AppCompatActivity implements AdapterView.
 
     public void publicarPost(View view) {
 
-        String a, b, c, d;
 
-        System.out.println("usuari2");
-        System.out.println("usuari2 : " + varus);
+        ref2 = database.getReference("Contador");
 
-        a = mTitol.getText().toString();
-        b = mContingut.getText().toString();
-        c = sp.getSelectedItem().toString();
-        d = varus;
+        ref2.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                contador = dataSnapshot.getValue(Long.class);
 
-        int random = new Random().nextInt(100) + 20;
+                //post = "Post" + (contador+1);
+                post = "Post3";
+                DatabaseReference myRefName = database.getReference("Posts/" + post);
 
-        String ax = String.valueOf(random);
-        String post = "post8";
 
-        database = FirebaseDatabase.getInstance();
-        DatabaseReference myRefName = database.getReference("Posts/" + post);
+                final String A = mTitol.getText().toString();
+                final String B = mContingut.getText().toString();
+                final String C = sp.getSelectedItem().toString();
+                final String D = varus;
+                myRefName.child("Titol").setValue(A);
+                myRefName.child("Contingut").setValue(B);
+                myRefName.child("Assignatura").setValue(C);
+                myRefName.child("Autor").setValue(D);
 
-        myRefName.child("Titol").setValue(a);
-        myRefName.child("Contingut").setValue(b);
-        myRefName.child("Assignatura").setValue(c);
-        myRefName.child("Autor").setValue(d);
+
+                ref2.setValue(contador+1);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
     }
 }

@@ -85,6 +85,8 @@ public class AssignaturaAdapter extends RecyclerView.Adapter<AssignaturaAdapter.
             detailIntent.putExtra("title", currentAssignatura.getTitle());
             detailIntent.putExtra("image_resource", currentAssignatura.getImageResource());
             mContext.startActivity(detailIntent);
+
+
         }
     }
 }

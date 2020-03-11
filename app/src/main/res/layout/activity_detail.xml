@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/newsTitleDetail"
             android:padding="16dp"
-            android:text="@string/subtitle_detail_text" />
+            android:text="El resultat de la multiplicació de l'exercici 4 era el següent: 11 x 4 = 44. Al realitzar multiplicacions per 11, intentar fer la multiplicació per 10 i llavors afegir el numero multiplicat, en aquest cas seria 10 x 4 = 40 i afegim 4, que ens dona 44." />
 
     </RelativeLayout>
 </ScrollView>
