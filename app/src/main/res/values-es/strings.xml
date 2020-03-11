@@ -18,7 +18,6 @@
     <string name="title_activity_settings">Ajustes</string>
     <string name="sync_header">Sincronizción</string>
     <string name="messages_header">Mensajes</string>
-    <string name="accio_eines">accion_herramientas</string>
     <string name="menu_chats">Chat</string>
     <string name="menu_home" >Hogar</string>
     <string name="menu_profile" >Perfil</string>
@@ -36,4 +35,5 @@
     <string name="Text_post" >TEXTO DEL POST</string>
     <string name="attachment_summary_on">Descargar automáticamente archivos adjuntos para correos electrónicos entrantes</string>
     <string name="attachment_title">Descargar archivos adjuntos entrantes</string>
+    <string name="accio_eines">Cerrar sesión</string>
 </resources>

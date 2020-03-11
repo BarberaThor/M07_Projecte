@@ -1,5 +1,6 @@
 package cat.barbera.m07_projecte.ui.chats;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,7 +10,15 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import cat.barbera.m07_projecte.R;
 
@@ -26,12 +35,43 @@ public class LlistaChats extends AppCompatActivity {
     private String contactoRecibido;
     private String fechaRecibida;
 
+    private String email;
+
+    private FirebaseAuth mAuth;
+    private String id;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_llista_chats);
+
+        mAuth = FirebaseAuth.getInstance();
+
+        id = mAuth.getCurrentUser().getUid();
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+        DatabaseReference myRef = database.getReference("User/"+ id);
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
+                    HashMap map =  (HashMap)dataSnapshot1.getValue();
+
+                    email = map.get("email").toString();
+
+                }
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         Intent intent = getIntent();
 
@@ -69,7 +109,7 @@ public class LlistaChats extends AppCompatActivity {
         arrayList.add(new ObjetoListView("Administrador" + getEmoji(0x1F601), "Xavi; " + getEmoji(0x1F64C),
                 "10/3/2020", TEXTO, false, 3, "", R.drawable.playstore));
 
-        arrayList.add(new ObjetoListView(contactoRecibido, "" ,
+        arrayList.add(new ObjetoListView(contactoRecibido, email + "; " ,
                 fechaRecibida, TEXTO, false, 0, "", R.drawable.playstore));
 
         return arrayList;

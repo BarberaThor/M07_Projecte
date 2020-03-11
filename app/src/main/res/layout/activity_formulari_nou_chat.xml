@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="32dp"
-        android:text="Contacte amb el que vols chatejar;"
+        android:text="Nom del grup que vols crear per chatejar;"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.028"
         app:layout_constraintStart_toStartOf="parent"

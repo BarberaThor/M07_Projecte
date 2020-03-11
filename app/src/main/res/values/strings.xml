@@ -25,7 +25,7 @@
     <string name="menu_tools">Eines</string>
     <string name="menu_share">Compartir</string>
     <string name="menu_send">Enviar</string>
-    <string name="accio_eines" >accio_eines</string>
+    <string name="accio_eines">"Tancar sessio "</string>
 
     <string name="Text_post">TEXT DEL POST</string>
     <string name="title_post">Títol;</string>

@@ -26,15 +26,19 @@ import com.bumptech.glide.Glide;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ServerValue;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+
+import java.util.HashMap;
 
 import cat.barbera.m07_projecte.R;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -51,6 +55,11 @@ public class ChatFragment extends AppCompatActivity {
     private EditText edMissatge;
     private Button btnEnviar;
     private ImageButton imgButton;
+
+    private String email;
+
+    private FirebaseAuth mAuth;
+    private String id;
 
     private AdapterMessage adapter;
 
@@ -83,7 +92,33 @@ public class ChatFragment extends AppCompatActivity {
          imgButton = (ImageButton) findViewById(R.id.img_button);
          fotoPerfilCadena = "";
 
-         database = FirebaseDatabase.getInstance();
+        database = FirebaseDatabase.getInstance();
+
+        mAuth = FirebaseAuth.getInstance();
+
+        id = mAuth.getCurrentUser().getUid();
+
+        DatabaseReference myRefUser = database.getReference("User/"+ id);
+        myRefUser.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
+                    HashMap map =  (HashMap)dataSnapshot1.getValue();
+
+                    email = map.get("email").toString();
+                    nombre.setText(email);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+
          myRef = database.getReference("Chat" + contactoAChatear); //Sala de chat (nombre)
 
          storage = FirebaseStorage.getInstance();

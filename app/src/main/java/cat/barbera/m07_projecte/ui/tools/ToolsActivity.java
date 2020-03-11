@@ -51,15 +51,7 @@ public class ToolsActivity extends AppCompatActivity {
         //ListPreference
         String servidor = sPref.getString("listPref", "-1");
 
-        Set<String> categoria = new HashSet<String>();
 
-        categoria = sPref.getStringSet("multiListPref", null);
-
-        if(categoria != null ){
-            for(String e: categoria){
-                Log.d("categoria", e.toString());
-            }
-        }
     }
 
     public void onClick(View view) {
