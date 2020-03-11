@@ -18,4 +18,22 @@
     <string name="title_activity_settings">Settings</string>
     <string name="sync_header">Sync</string>
     <string name="messages_header">Messages</string>
+    <string name="accio_eines">action_settings</string>
+    <string name="menu_chats">Chat</string>
+    <string name="menu_home" translatable="false">Home</string>
+    <string name="menu_profile" translatable="false">Profile</string>
+    <string name="menu_send" translatable="false">Send</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_tools">Tools</string>
+    <string name="obras_info_placeholder" translatable="false">Class group for passing notes or making queries!</string>
+    <string name="publicar_post" translatable="false">PUBLISH</string>
+    <string name="reply_title" translatable="false">Default reply action</string>
+    <string name="signature_title" translatable="false">Your signature</string>
+    <string name="subtitle_detail_text" translatable="false">Queries and sharing notes, exercises, books, etc ...</string>
+    <string name="sync_title" translatable="false">Sync email periodically</string>
+    <string name="title_post">Title;</string>
+    <string name="attachment_summary_off" translatable="false">Only download attachments when manually requested</string>
+    <string name="attachment_summary_on" translatable="false">Automatically download attachments for incoming emails</string>
+    <string name="Text_post" translatable="false">TEXT POST</string>
+    <string name="attachment_title">Download incoming attachments</string>
 </resources>

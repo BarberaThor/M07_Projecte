@@ -11,25 +11,25 @@
 
     <string name="title_placeholder">Classe</string>
     <string name="news_placeholder">Assignatura</string>
-    <string name="obras_info_placeholder" translatable="false">Grup de clase per pasar apunts o fer consultes!</string>
-    <string name="subtitle_detail_text" translatable="false">Consultes i compartició de apunts, excercicis, lllibres, etc...</string>
+    <string name="obras_info_placeholder">Grup de clase per pasar apunts o fer consultes!</string>
+    <string name="subtitle_detail_text">Consultes i compartició de apunts, excercicis, lllibres, etc...</string>
 
     <string name="Public">Public</string>
     <string name="Privat">Privat</string>
     <string name="nav_header_desc" translatable="false" />
     <string name="nav_header_title" translatable="false" />
     <string name="nav_header_subtitle" translatable="false" />
-    <string name="menu_home" translatable="false"> Home </string>
-    <string name="menu_profile" translatable="false"> Profile </string>
-    <string name="menu_chats" translatable="false"> Chats </string>
-    <string name="menu_tools" translatable="false"> Tools </string>
-    <string name="menu_share" translatable="false"> Share</string>
-    <string name="menu_send" translatable="false"> Send </string>
-    <string name="action_settings" translatable="false" />
+    <string name="menu_home">Casa</string>
+    <string name="menu_profile">Perfil</string>
+    <string name="menu_chats">Xats</string>
+    <string name="menu_tools">Eines</string>
+    <string name="menu_share">Compartir</string>
+    <string name="menu_send">Enviar</string>
+    <string name="accio_eines" >accio_eines</string>
 
-    <string name="Text_post" translatable="false"> TEXT POST</string>
-    <string name="title_post" translatable="false">Títol;</string>
-    <string name="publicar_post" translatable="false">PUBLICAR</string>
+    <string name="Text_post">TEXT DEL POST</string>
+    <string name="title_post">Títol;</string>
+    <string name="publicar_post">PUBLICAR</string>
 
     <string name="night_mode">Mode fosc</string>
 
@@ -39,19 +39,18 @@
 
     <string name="messages_header">Missatges</string>
     <string name="sync_header">Sincronització</string>
-    <string name="signature_title" translatable="false">Your signature</string>
+    <string name="signature_title">"La vostra signatura "</string>
 
     <!-- Preference Titles -->
-    <string name="reply_title" translatable="false">Default reply action</string>
-    <string name="sync_title" translatable="false">Sync email periodically</string>
+    <string name="reply_title">Acció de resposta predeterminada</string>
+    <string name="sync_title">Sincronitza el correu electrònic periòdicament</string>
 
     <!-- Messages Preferences -->
-    <string name="attachment_title" translatable="false">Download incoming attachments</string>
-    <string name="attachment_summary_on" translatable="false">Automatically download attachments for incoming emails
-    </string>
+    <string name="attachment_title">Descargar archivos adjuntos entrantes</string>
+    <string name="attachment_summary_on">Baixeu automàticament els fitxers adjunts per als correus electrònics entrants</string>
 
     <!-- Sync Preferences -->
-    <string name="attachment_summary_off" translatable="false">Only download attachments when manually requested</string>
+    <string name="attachment_summary_off">Baixeu fitxers adjunts només quan ho sol·liciteu manualment</string>
     <string-array name="titol_assignatura">
         <item>Matematiques</item>
         <item>Catala</item>
