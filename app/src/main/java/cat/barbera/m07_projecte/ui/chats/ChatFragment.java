@@ -27,6 +27,7 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -59,7 +60,7 @@ public class ChatFragment extends AppCompatActivity {
     private String email;
 
     private FirebaseAuth mAuth;
-    private String id;
+    private FirebaseUser currentUser;
 
     private AdapterMessage adapter;
 
@@ -95,8 +96,10 @@ public class ChatFragment extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
 
         mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
 
-        id = mAuth.getCurrentUser().getUid();
+
+        /*id = mAuth.getCurrentUser().getUid();
 
         DatabaseReference myRefUser = database.getReference("User/"+ id);
         myRefUser.addValueEventListener(new ValueEventListener() {
@@ -115,7 +118,9 @@ public class ChatFragment extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
+        });*/
+
+        nombre.setText(currentUser.getEmail());
 
 
 

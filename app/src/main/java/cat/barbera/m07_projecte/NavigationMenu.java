@@ -8,6 +8,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.IdRes;
@@ -20,6 +21,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -45,7 +47,7 @@ public class NavigationMenu extends AppCompatActivity {
     private String email;
 
     private FirebaseAuth mAuth;
-    private String id;
+    private FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,11 +56,12 @@ public class NavigationMenu extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
+
         mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
 
-        txt_email = findViewById(R.id.txt_email);
 
-        id = mAuth.getCurrentUser().getUid();
+        /*id = mAuth.getCurrentUser().getUid();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
@@ -81,7 +84,7 @@ public class NavigationMenu extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
+        });*/
 
 
        /* fab.setOnClickListener(new View.OnClickListener() {
@@ -104,6 +107,8 @@ public class NavigationMenu extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        updateNavHeader();
     }
 
 
@@ -112,6 +117,18 @@ public class NavigationMenu extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.navigation, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.action_settings) {
+            FirebaseAuth.getInstance().signOut();
+            System.out.println(mAuth.getUid());
+            finish();
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -126,6 +143,14 @@ public class NavigationMenu extends AppCompatActivity {
         Intent intent = new Intent(this, FormulariActivity.class);
 
         startActivityForResult(intent, TEXT_REQUEST);
+    }
+
+    public void updateNavHeader(){
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
+        TextView navUserEmail = headerView.findViewById(R.id.txt_email);
+
+        navUserEmail.setText(currentUser.getEmail());
     }
 
 

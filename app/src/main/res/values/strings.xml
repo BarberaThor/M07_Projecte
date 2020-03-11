@@ -17,7 +17,7 @@
     <string name="Public">Public</string>
     <string name="Privat">Privat</string>
     <string name="nav_header_desc" translatable="false" />
-    <string name="nav_header_title" translatable="false" />
+    <string name="nav_header_title" translatable="false" >andridstudio@gmail.com</string>
     <string name="nav_header_subtitle" translatable="false" />
     <string name="menu_home">Casa</string>
     <string name="menu_profile">Perfil</string>
