@@ -51,6 +51,7 @@
             android:id="@+id/img_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="Escull una imatge a enviar"
             android:background="@drawable/ic_menu_gallery"
             android:layout_gravity="center"/>
 
@@ -59,12 +60,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Escribe un mensaje..."
+            android:contentDescription="Introdueix el missatge"
             android:layout_weight="1"/>
         
         <Button
             android:id="@+id/btn_enviar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="Envia el missatge"
             android:hint="ENVIAR"/>
     </LinearLayout>
     

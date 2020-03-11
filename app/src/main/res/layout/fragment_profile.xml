@@ -15,6 +15,7 @@
         android:onClick="handle_Guardar"
         android:text="@string/guardar"
         android:textSize="28dp"
+        android:contentDescription="Guardar perfil"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.524"

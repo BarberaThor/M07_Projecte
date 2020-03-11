@@ -17,6 +17,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,10 +26,15 @@ import java.util.Map;
 public class RegistreActivity extends AppCompatActivity {
 
     private static final int TEXT_REQUEST = 1;
+
     EditText medtUsuari;
     EditText medtContra;
 
+    private String email = " ";
+    private String password = " ";
+
     private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +45,8 @@ public class RegistreActivity extends AppCompatActivity {
         medtContra = findViewById(R.id.edtContra);
 
         mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES); //For night mode theme
-        //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES); //For day mode theme
-        //setContentView(R.layout.activity_registre);
     }
 
 
@@ -52,14 +57,33 @@ public class RegistreActivity extends AppCompatActivity {
 
     public void registrarUsuari(View view) {
 
-        String email = medtUsuari.getText().toString();
-        String password = medtContra.getText().toString();
-            mAuth.createUserWithEmailAndPassword(email, password)
+        email = medtUsuari.getText().toString();
+        password = medtContra.getText().toString();
+
+        if(!email.isEmpty() && !password.isEmpty()) {
+
+            if (password.length() >= 6) {
+                registerUsuari();
+            } else {
+                Toast.makeText(RegistreActivity.this, "La contrasenya ha de tenir com a minim 6 digits", Toast.LENGTH_SHORT).show();
+            }
+
+        } else {
+            Toast.makeText(RegistreActivity.this, "Ha de completar els camps", Toast.LENGTH_SHORT).show();
+        }
+
+            /*mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(Task<AuthResult> task    ) {
                         if (task.isSuccessful()) {
-                            
+                            Map<String,Object> map = new HashMap<>();
+                            map.put("email", email);
+                            map.put("password", password);
+
+                            String id = mAuth.getCurrentUser().getUid();
+
+                            mDatabase.child("Users").child(id).setValue(map);
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("taag", "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
@@ -73,7 +97,7 @@ public class RegistreActivity extends AppCompatActivity {
                             updateUI(null);
                         }
                     }
-                });
+                });*/
         /*
         if(!a.equalsIgnoreCase("")|| !b.equalsIgnoreCase("")) {
 
@@ -96,12 +120,43 @@ public class RegistreActivity extends AppCompatActivity {
          */
     }
 
-    private void updateUI(FirebaseUser user) {
+    private void registerUsuari() {
+        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()) {
+                    Map<String,Object> map = new HashMap<>();
+                    map.put("email", email);
+                    map.put("password", password);
+
+                    String id = mAuth.getCurrentUser().getUid();
+
+                    mDatabase.child("Users").child(id).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task2) {
+                            if (task2.isSuccessful()) {
+                                startActivity(new Intent(RegistreActivity.this, MainActivity.class));
+                                finish();
+                            } else {
+                                Toast.makeText(RegistreActivity.this, "No s'ha pogut crear les dades", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+
+                } else {
+                    Toast.makeText(RegistreActivity.this, "No s'ha pogut registrar", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+    }
+
+    /*private void updateUI(FirebaseUser user) {
 
         Intent intent2 = new Intent(this, MainActivity.class);
         startActivityForResult(intent2, TEXT_REQUEST);
 
-    }
+    }*/
 
 /*
     public void canviarMode(View view) {

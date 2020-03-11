@@ -13,14 +13,13 @@
         <activity android:name=".ui.chats.LlistaChats" />
         <activity android:name=".MessageActivity" />
         <activity android:name=".FormulariActivity" />
-        <activity android:name=".PerfilActivity" />
         <activity android:name=".DetailActivity" />
         <activity android:name=".RegistreActivity" />
         <activity android:name=".ui.tools.ToolsActivity" />
         <activity android:name=".ui.chats.ChatFragment" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".NavigationMenu" />
         <activity
-            android:name=".NavigationMenu"
+            android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
