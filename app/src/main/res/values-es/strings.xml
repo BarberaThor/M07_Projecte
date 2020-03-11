@@ -20,20 +20,20 @@
     <string name="messages_header">Mensajes</string>
     <string name="accio_eines">accion_herramientas</string>
     <string name="menu_chats">Chat</string>
-    <string name="menu_home" translatable="false">Hogar</string>
-    <string name="menu_profile" translatable="false">Perfil</string>
-    <string name="menu_send" translatable="false">Enviar</string>
+    <string name="menu_home" >Hogar</string>
+    <string name="menu_profile" >Perfil</string>
+    <string name="menu_send" >Enviar</string>
     <string name="menu_share">Compartir</string>
     <string name="menu_tools">Herramientas</string>
-    <string name="obras_info_placeholder" translatable="false">Grupo de clase para pasar apuntes o hacer consultas!</string>
-    <string name="publicar_post" translatable="false">PUBLICAR</string>
-    <string name="reply_title" translatable="false">Acción de respuesta predeterminada</string>
-    <string name="signature_title" translatable="false">Su signatura</string>
+    <string name="obras_info_placeholder" >Grupo de clase para pasar apuntes o hacer consultas!</string>
+    <string name="publicar_post" >PUBLICAR</string>
+    <string name="reply_title" >Acción de respuesta predeterminada</string>
+    <string name="signature_title" >Su signatura</string>
     <string name="subtitle_detail_text">Consultas y compartición de apuntes, ejercicios, lllibres, etc ...</string>
-    <string name="sync_title" translatable="false">Sincronizar correos electrónicos periódicamente</string>
+    <string name="sync_title" >Sincronizar correos electrónicos periódicamente</string>
     <string name="title_post">Titulo;</string>
-    <string name="attachment_summary_off" translatable="false">Descargar solo archivos adjuntos cuando se solicite manualmente</string>
-    <string name="Text_post" translatable="false">TEXTO DEL POST</string>
+    <string name="attachment_summary_off" >Descargar solo archivos adjuntos cuando se solicite manualmente</string>
+    <string name="Text_post" >TEXTO DEL POST</string>
     <string name="attachment_summary_on">Descargar automáticamente archivos adjuntos para correos electrónicos entrantes</string>
     <string name="attachment_title">Descargar archivos adjuntos entrantes</string>
 </resources>

@@ -46,7 +46,7 @@
     <string name="sync_title">Sincronitza el correu electrònic periòdicament</string>
 
     <!-- Messages Preferences -->
-    <string name="attachment_title">Descargar archivos adjuntos entrantes</string>
+    <string name="attachment_title">Baixeu fitxers adjunts entrants</string>
     <string name="attachment_summary_on">Baixeu automàticament els fitxers adjunts per als correus electrònics entrants</string>
 
     <!-- Sync Preferences -->
